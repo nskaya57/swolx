@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOLX | Premium Industrial Performance</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#E60000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-[#0A0A0A] text-white">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10">
+        <!-- Logo -->
+        <a href="#" class="flex-shrink-0">
+            <h1 class="text-3xl font-black tracking-tighter italic italic-bold">SWOLX</h1>
+        </a>
+
+        <!-- Main Navigation -->
+        <nav class="hidden lg:flex flex-grow justify-center">
+            <ul class="flex space-x-12">
+                <li><a href="#" class="nav-link text-white/70">YENİ ÜRÜNLER</a></li>
+                <li><a href="#" class="nav-link text-white/70">AYAKKABILAR</a></li>
+                <li><a href="#" class="nav-link text-white/70">TEKNOLOJİ</a></li>
+                <li><a href="#" class="nav-link text-white/70">BAYİ BUL</a></li>
+                <li><a href="#" class="nav-link text-white/70">KURUMSAL</a></li>
+            </ul>
+        </nav>
+
+        <!-- Icons -->
+        <div class="flex items-center space-x-8">
+            <button class="hover:text-accent transition-colors" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button class="lg:hidden" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Slider -->
+        <section class="sg-slider">
+            <!-- Slide 1 -->
+            <article class="sg-slide active">
+                <div class="sg-slide-media">
+                    <img src="/Users/eneskaya/.gemini/antigravity/brain/d17157ac-09e9-4d6a-b121-eea0893faeaf/swolx_custom_slider_hero_final_1768842738255.png"
+                        alt="Swolx Performance">
+                </div>
+                <div class="sg-slide-overlay"></div>
+                <div class="sg-slide-content">
+                    <h2 class="sg-slide-title">POWERED BY PERFORMANCE</h2>
+                    <a href="#" class="sg-slide-cta">KOLEKSİYONU KEŞFET</a>
+                </div>
+            </article>
+
+            <!-- Slide 2 -->
+            <article class="sg-slide">
+                <div class="sg-slide-media">
+                    <img src="/Users/eneskaya/.gemini/antigravity/brain/d17157ac-09e9-4d6a-b121-eea0893faeaf/swolx_oxy_grid_slider_final_refined_1768852123115.png"
+                        alt="Swolx Technology">
+                </div>
+                <div class="sg-slide-overlay"></div>
+                <div class="sg-slide-content">
+                    <h2 class="sg-slide-title">ENGINEERED FOR EXTREMES</h2>
+                    <a href="#" class="sg-slide-cta">TEKNOLOJİYİ İNCELE</a>
+                </div>
+            </article>
+
+            <!-- Slider Controls -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex space-x-4 z-40">
+                <button onclick="goToSlide(0)" class="pagination-dot w-12 h-1 bg-white"
+                    aria-label="Go to slide 1"></button>
+                <button onclick="goToSlide(1)" class="pagination-dot w-12 h-1 bg-white/20"
+                    aria-label="Go to slide 2"></button>
+            </div>
+            <!-- Navigation Arrows -->
+            <button class="hero-nav-btn prev" aria-label="Previous" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="hero-nav-btn next" aria-label="Next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+        <section class="category-section">
+            <div class="category-grid">
+                <!-- Ayakkabı -->
+                <div class="category-card">
+                    <div class="category-img-wrap">
+                        <img src="/Users/eneskaya/Swolx/kategori-ayakkabi.png" alt="Ayakkabı">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">AYAKKABI</h3>
+                        <a href="#" class="category-link">TÜMÜNÜ GÖR</a>
+                    </div>
+                </div>
+
+                <!-- Bot -->
+                <div class="category-card">
+                    <div class="category-img-wrap">
+                        <img src="/Users/eneskaya/Swolx/kategori-bot.png" alt="Bot">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">BOT</h3>
+                        <a href="#" class="category-link">TÜMÜNÜ GÖR</a>
+                    </div>
+                </div>
+
+                <!-- Sandalet -->
+                <div class="category-card">
+                    <div class="category-img-wrap">
+                        <img src="/Users/eneskaya/Swolx/kategori-sandalet.png" alt="Sandalet">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">SANDALET</h3>
+                        <a href="#" class="category-link">TÜMÜNÜ GÖR</a>
+                    </div>
+                </div>
+
+                <!-- Çizme -->
+                <div class="category-card">
+                    <div class="category-img-wrap">
+                        <img src="/Users/eneskaya/Swolx/kategori-cizme.png" alt="Çizme">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">ÇİZME</h3>
+                        <a href="#" class="category-link">TÜMÜNÜ GÖR</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Showcase -->
+        <section class="tech-section">
+            <div class="tech-grid-bg"></div>
+            <div class="tech-content">
+                <div class="tech-image reveal">
+                    <video autoplay muted loop playsinline class="w-full mix-blend-multiply">
+                        <source src="donen-urun.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="tech-specs">
+                    <h2 class="text-6xl mb-12">OXYGRID<br><span class="text-accent">DYNAMICS</span></h2>
+
+                    <div class="spec-item reveal">
+                        <div class="spec-val">S3L SRC</div>
+                        <div class="spec-label">GÜVENLİK STANDARDI</div>
+                    </div>
+
+                    <div class="spec-item reveal">
+                        <div class="spec-val">COMPOUND</div>
+                        <div class="spec-label">HAFİF KOMPOZİT BURUN</div>
+                    </div>
+
+                    <div class="spec-item reveal">
+                        <div class="spec-val">AIR-TECH</div>
+                        <div class="spec-label">360° NEFES ALABİLİR YAPI</div>
+                    </div>
+
+                    <a href="#" class="sg-slide-cta mt-8 block w-fit">TEKNİK DETAYLAR</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immersive Video -->
+        <section class="video-hero-section">
+            <video autoplay muted loop playsinline class="video-bg">
+                <source src="anasayfa-bg.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="video-content">
+                <h2 class="text-7xl mb-8 reveal">LIMITLESS<br>PROTECTION</h2>
+                <a href="#" class="sg-slide-cta reveal">HİKAYEMİZİ İZLE</a>
+            </div>
+        </section>
+
+        <!-- Info Grid -->
+        <section class="info-section">
+            <div class="info-item">
+                <img src="/Users/eneskaya/.gemini/antigravity/brain/d17157ac-09e9-4d6a-b121-eea0893faeaf/swolx_custom_slider_hero_final_1768842738255.png"
+                    alt="Katalog">
+                <div class="info-text">
+                    <h2 class="info-title">2025<br>KATALOG</h2>
+                    <a href="#" class="inline-block mt-4 text-xs tracking-widest font-bold">PDF İNDİR →</a>
+                </div>
+            </div>
+            <div class="info-item">
+                <img src="/Users/eneskaya/.gemini/antigravity/brain/d17157ac-09e9-4d6a-b121-eea0893faeaf/swolx_oxy_grid_slider_final_refined_1768852123115.png"
+                    alt="Bakım Klavuzu">
+                <div class="info-text">
+                    <h2 class="info-title">BAKIM<br>KLAVUZU</h2>
+                    <a href="#" class="inline-block mt-4 text-xs tracking-widest font-bold">NASIL KORUNUR? →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Section -->
+        <section class="seo-section px-10">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="seo-card reveal">
+                    <h2 class="text-4xl mb-8">SWOLX: ENDÜSTRİYEL PERFORMANS VE GÜVENLİK</h2>
+                    <div class="grid lg:grid-cols-2 gap-12 text-white/60 leading-relaxed">
+                        <p>Swolx, endüstriyel iş güvenliği ayakkabılarında inovasyon ve tasarımı bir araya getirerek,
+                            zorlu çalışma koşullarında maksimum performans ve konfor sunar. Yüksek kaliteli malzemeler
+                            ve ileri teknoloji ile üretilen ürünlerimiz, sadece koruma sağlamakla kalmıyor, aynı zamanda
+                            kullanıcının ergonomisini ve hareket kabiliyetini de optimize ediyor.</p>
+                        <p>Koleksiyonumuzdaki her bir ürün, zorlu testlerden geçerek uluslararası güvenlik
+                            standartlarına (EN ISO 20345) tam uyum sağlar. Çelik veya kompozit burun koruması,
+                            anti-perforasyon ara taban, kaymaz (SRC) dış taban ve nefes alabilen iç astar gibi
+                            özellikler, Swolx ayakkabılarının temel taşlarını oluşturur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="col-span-2 lg:col-span-2">
+                <h2 class="footer-logo font-black italic">SWOLX</h2>
+                <div class="space-y-4 max-w-md">
+                    <p class="text-sm font-bold text-white uppercase tracking-tighter">SWOLX: TAVİZSİZ PERFORMANS,
+                        MAKSİMUM GÜVENLİK.</p>
+                    <p class="text-white/40 text-sm leading-relaxed">
+                        Swolx, endüstriyel ortamlarda çalışanlar için yüksek performanslı, sıfır tavizli güvenlik
+                        ayakkabıları üretir.
+                        Gelişmiş teknolojilerimiz ve premium tasarım anlayışımızla, iş güvenliğini bir üst seviyeye
+                        taşıyoruz.
+                    </p>
+                </div>
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">MÜŞTERİ HİZMETLERİ</h4>
+                <ul class="footer-links">
+                    <li><a href="#">İletişim</a></li>
+                    <li><a href="#">Sıkça Sorulan Sorular</a></li>
+                    <li><a href="#">Mağaza Bulucu</a></li>
+                    <li><a href="#">Bakım Kılavuzu</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">KURUMSAL</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Felsefemiz</a></li>
+                    <li><a href="#">Sürdürülebilirlik</a></li>
+                    <li><a href="#">Topluluk</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">YASAL</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Gizlilik Politikası</a></li>
+                    <li><a href="#">Çerez Politikası</a></li>
+                    <li><a href="#">Kullanım Şartları</a></li>
+                    <li><a href="#">Erişilebilirlik</a></li>
+                </ul>
+                <h4 class="footer-heading mt-12">DİL DEĞİŞTİR</h4>
+                <div class="lang-selector">
+                    <button class="lang-btn">
+                        <span>TÜRKİYE</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <p class="text-[10px] text-white/30 mt-2 uppercase">Global / English</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
+            <p class="text-[10px] text-white/20 tracking-widest uppercase">© 2026 SWOLX. TÜM HAKLARI SAKLIDIR.</p>
+            <div class="flex gap-8">
+                <a href="#"
+                    class="text-[10px] text-white/20 hover:text-white transition-colors uppercase tracking-widest">GÜVENLİK</a>
+                <a href="#"
+                    class="text-[10px] text-white/20 hover:text-white transition-colors uppercase tracking-widest">ÇEREZ
+                    AYARLARI</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.sg-slide');
+        const dots = document.querySelectorAll('.pagination-dot');
+
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-white', index === currentSlide);
+                dot.classList.toggle('bg-white/20', index !== currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 8000);
+
+        // Header Scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.85) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+
+</html>
