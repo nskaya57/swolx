@@ -94,13 +94,16 @@
         <!-- Right Side Icons -->
         <div class="flex items-center space-x-6 text-black">
             <!-- Language (Hidden on Mobile) -->
-            <button class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
+            <button id="lang-trigger"
+                class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
                 <i class="fa-solid fa-globe text-lg mb-0.5"></i>
                 <span class="text-[8px] font-bold uppercase tracking-tight">DİL</span>
             </button>
 
             <!-- Search (Hidden on Mobile) -->
-            <button class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
+            <button
+                class="search-trigger hidden lg:flex flex-col items-center group transition-colors hover:text-accent"
+                aria-label="Ara">
                 <i class="fa-solid fa-magnifying-glass text-lg mb-0.5"></i>
                 <span class="text-[8px] font-bold uppercase tracking-tight">ARA</span>
             </button>
@@ -161,16 +164,136 @@
 
             <div class="mt-auto pt-8 border-t border-gray-100 flex justify-start items-center text-black">
                 <div class="flex space-x-8">
-                    <button class="flex flex-col items-center">
+                    <button id="mobile-lang-trigger" class="flex flex-col items-center">
                         <i class="fa-solid fa-globe text-2xl mb-1"></i>
                         <span class="text-[10px] font-bold uppercase">DİL</span>
                     </button>
-                    <button class="flex flex-col items-center">
+                    <button class="search-trigger flex flex-col items-center">
                         <i class="fa-solid fa-magnifying-glass text-2xl mb-1"></i>
                         <span class="text-[10px] font-bold uppercase">ARA</span>
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-[#F8F9FA] backdrop-blur-2xl z-[200] opacity-0 invisible transition-all duration-500 flex flex-col">
+        <div class="p-6 md:p-10 flex justify-end">
+            <button id="search-close" class="text-black hover:text-accent transition-colors p-4" aria-label="Kapat">
+                <i class="fa-solid fa-xmark text-4xl"></i>
+            </button>
+        </div>
+        <div class="flex-grow flex items-start justify-center px-4 md:px-6 pt-[10vh] md:pt-[15vh]">
+            <div class="w-full max-w-4xl relative reveal-search">
+                <div
+                    class="relative flex items-center bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl px-4 md:px-6 focus-within:border-accent group transition-all shadow-sm">
+                    <i
+                        class="fa-solid fa-magnifying-glass text-gray-400 text-lg md:text-2xl mr-3 md:mr-4 group-focus-within:text-accent transition-colors"></i>
+                    <input type="text" id="search-input" placeholder="Ne aramıştınız?"
+                        class="w-full bg-transparent py-4 md:py-8 text-lg md:text-3xl text-black placeholder:text-gray-400 focus:outline-none font-bold italic uppercase">
+                </div>
+                <div class="mt-8 md:mt-12 flex flex-wrap gap-2 md:gap-4">
+                    <span
+                        class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest w-full mb-2">Popüler
+                        Aramalar</span>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Oxygrid</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">S3L
+                        SRC</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Botlar</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Sandalet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Drawer -->
+    <div id="lang-drawer"
+        class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-[300] translate-x-full transition-transform duration-500 shadow-2xl flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h3 class="text-black font-bold text-xl uppercase italic">DİL SEÇİMİ</h3>
+            <button id="lang-close" class="text-black hover:text-accent p-2">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <div class="flex-grow overflow-y-auto py-4">
+            <ul class="space-y-1">
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="tr">
+                        <span
+                            class="w-8 h-5 bg-[#E30A17] rounded-sm mr-4 relative overflow-hidden flex items-center justify-center">
+                            <svg viewBox="0 0 1200 800" class="w-full h-full">
+                                <rect width="1200" height="800" fill="#E30A17" />
+                                <circle cx="425" cy="400" r="200" fill="#fff" />
+                                <circle cx="475" cy="400" r="160" fill="#E30A17" />
+                                <polygon points="575,400 701,359 653,491 575,400" fill="#fff"
+                                    transform="translate(100,0) rotate(-18 575 400)" />
+                            </svg>
+                        </span>
+                        <span class="text-black font-semibold">TÜRKÇE</span>
+                        <i class="fa-solid fa-check ml-auto text-accent"></i>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="en">
+                        <span
+                            class="w-8 h-5 bg-[#012169] rounded-sm mr-4 relative overflow-hidden flex items-center justify-center">
+                            <svg viewBox="0 0 60 30" class="w-full h-full">
+                                <clipPath id="s">
+                                    <path d="M0,0 v30 h60 v-30 z" />
+                                </clipPath>
+                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" clip-path="url(#s)" />
+                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"
+                                    clip-path="url(#s)" />
+                                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                            </svg>
+                        </span>
+                        <span class="text-black font-semibold">ENGLISH</span>
+                        <i class="fa-solid fa-check ml-auto text-accent opacity-0"></i>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="de">
+                        <span
+                            class="w-8 h-5 bg-black rounded-sm mr-4 relative overflow-hidden flex flex-col items-center justify-center">
+                            <div class="w-full h-1/3 bg-black"></div>
+                            <div class="w-full h-1/3 bg-[#D00] border-y border-white/5"></div>
+                            <div class="w-full h-1/3 bg-[#FFCE00]"></div>
+                        </span>
+                        <span class="text-black font-semibold">DEUTSCH</span>
+                        <i class="fa-solid fa-check ml-auto text-accent opacity-0"></i>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="nl">
+                        <span
+                            class="w-8 h-5 rounded-sm mr-4 relative overflow-hidden flex flex-col items-center justify-center">
+                            <div class="w-full h-1/3 bg-blue-800"></div>
+                            <div class="w-full h-1/3 bg-white border-y border-gray-100"></div>
+                            <div class="w-full h-1/3 bg-red-600"></div>
+                        </span>
+                        <span class="text-black font-semibold">NEDERLANDS</span>
+                        <i class="fa-solid fa-check ml-auto text-accent opacity-0"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="p-8 bg-gray-50">
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Global / English</p>
         </div>
     </div>
 
@@ -452,7 +575,7 @@
                 </ul>
                 <h4 class="footer-heading mt-12">DİL DEĞİŞTİR</h4>
                 <div class="lang-selector">
-                    <button class="lang-btn">
+                    <button id="footer-lang-trigger" class="lang-btn">
                         <span>TÜRKİYE</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -547,6 +670,92 @@
                     icon.classList.toggle('fa-xmark');
                 }
             });
+        });
+
+        // Search Overlay Toggle
+        const searchTriggers = document.querySelectorAll('.search-trigger');
+        const searchClose = document.getElementById('search-close');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchInput = document.getElementById('search-input');
+
+        if (searchTriggers && searchOverlay) {
+            searchTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    searchOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    setTimeout(() => {
+                        if (searchInput) searchInput.focus();
+                    }, 500);
+                });
+            });
+        }
+
+        if (searchClose && searchOverlay) {
+            searchClose.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close search on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Language Drawer Toggle
+        const langTrigger = document.getElementById('lang-trigger');
+        const mobileLangTrigger = document.getElementById('mobile-lang-trigger');
+        const footerLangTrigger = document.getElementById('footer-lang-trigger');
+        const langClose = document.getElementById('lang-close');
+        const langDrawer = document.getElementById('lang-drawer');
+        const langOptions = document.querySelectorAll('.lang-option');
+
+        const openLangDrawer = () => {
+            langDrawer.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        };
+
+        if (langTrigger && langDrawer) langTrigger.addEventListener('click', openLangDrawer);
+        if (mobileLangTrigger && langDrawer) mobileLangTrigger.addEventListener('click', openLangDrawer);
+        if (footerLangTrigger && langDrawer) footerLangTrigger.addEventListener('click', openLangDrawer);
+
+        if (langClose && langDrawer) {
+            langClose.addEventListener('click', () => {
+                langDrawer.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove checkmark from ALL options
+                langOptions.forEach(opt => {
+                    const checkIcon = opt.querySelector('i');
+                    checkIcon.classList.add('opacity-0');
+                    checkIcon.classList.remove('opacity-100'); // Explicitly remove TR default if any
+                });
+                // Add checkmark to CLICKED option
+                const currentCheck = option.querySelector('i');
+                currentCheck.classList.remove('opacity-0');
+                currentCheck.classList.add('opacity-100');
+
+                // Close after delay
+                setTimeout(() => {
+                    langDrawer.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                }, 400);
+            });
+        });
+
+        // Close lang on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !langDrawer.classList.contains('translate-x-full')) {
+                langDrawer.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            }
         });
 
         // Scroll Reveal

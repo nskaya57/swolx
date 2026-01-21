@@ -712,6 +712,22 @@ footer {
   transition-delay: 0.4s;
 }
 
+#search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal-search {
+  opacity: 0;
+  transform: translateY(40px) skewX(-10deg);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+#search-overlay.active .reveal-search {
+  opacity: 1;
+  transform: translateY(0) skewX(-10deg);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-nav-btn {
