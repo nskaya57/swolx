@@ -29,33 +29,87 @@
 <body class="bg-[#0A0A0A] text-white">
 
     <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10">
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10 bg-white shadow-sm">
         <!-- Logo -->
-        <a href="#" class="flex-shrink-0">
-            <h1 class="text-3xl font-black tracking-tighter italic italic-bold">SWOLX</h1>
+        <a href="#" class="flex items-center">
+            <img src="assets/img/logo/swolx-logo-renkli.png" alt="SWOLX Logo"
+                class="header-logo-img h-10 md:h-12 w-auto transition-all duration-300">
         </a>
 
         <!-- Main Navigation -->
         <nav class="hidden lg:flex flex-grow justify-center">
-            <ul class="flex space-x-12">
-                <li><a href="#" class="nav-link text-white/70">YENİ ÜRÜNLER</a></li>
-                <li><a href="#" class="nav-link text-white/70">AYAKKABILAR</a></li>
-                <li><a href="#" class="nav-link text-white/70">TEKNOLOJİ</a></li>
-                <li><a href="#" class="nav-link text-white/70">BAYİ BUL</a></li>
-                <li><a href="#" class="nav-link text-white/70">KURUMSAL</a></li>
+            <ul class="flex space-x-8">
+                <li class="group/mega">
+                    <a href="#" class="nav-link py-8">Ürünler</a>
+                    <!-- Mega Menu Dropdown -->
+                    <div
+                        class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
+                        <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Ayakkabılar</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Botlar</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Sandaletler</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Çizmeler</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Add more columns if needed -->
+                        </div>
+                    </div>
+                </li>
+                <li class="group/mega">
+                    <a href="#" class="nav-link py-8">Aksesuarlar</a>
+                    <!-- Mega Menu Dropdown for Accessories -->
+                    <div
+                        class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
+                        <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Çoraplar</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Tabanlıklar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" class="nav-link py-8">Mağaza Bulucu</a></li>
+                <li><a href="#" class="nav-link py-8">Rehberler</a></li>
+                <li><a href="#" class="nav-link py-8">Sürdürülebilirlik</a></li>
             </ul>
         </nav>
 
-        <!-- Icons -->
-        <div class="flex items-center space-x-8">
-            <button class="hover:text-accent transition-colors" aria-label="Search">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
+        <!-- Right Side Icons -->
+        <div class="flex items-center space-x-6 text-black">
+            <!-- Language (Hidden on Mobile) -->
+            <button class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
+                <i class="fa-solid fa-globe text-lg mb-0.5"></i>
+                <span class="text-[8px] font-bold uppercase tracking-tight">DİL</span>
             </button>
-            <button class="lg:hidden" aria-label="Menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+
+            <!-- Search (Hidden on Mobile) -->
+            <button class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
+                <i class="fa-solid fa-magnifying-glass text-lg mb-0.5"></i>
+                <span class="text-[8px] font-bold uppercase tracking-tight">ARA</span>
+            </button>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-trigger"
+                class="lg:hidden text-black hover:text-accent transition-colors p-2 border-2 border-transparent focus:border-blue-600 rounded-lg"
+                aria-label="Open mobile menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -63,6 +117,69 @@
             </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-white z-[100] translate-x-full transition-transform duration-500 lg:hidden overflow-y-auto">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex flex-row-reverse justify-between items-center mb-12">
+                <button id="mobile-menu-close" class="p-2 border-2 border-black rounded-sm text-black"
+                    aria-label="Close mobile menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <img src="assets/img/logo/swolx-logo-renkli.png" alt="SWOLX Logo" class="h-12 w-auto">
+            </div>
+
+            <nav class="flex-grow text-black">
+                <ul class="space-y-6">
+                    <li>
+                        <button
+                            class="mobile-accordion-btn w-full flex justify-between items-center text-xl font-bold border-b border-gray-100 pb-4">
+                            <span>ÜRÜNLER</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
+                            <a href="#" class="block text-lg font-semibold text-gray-700">Ayakkabılar</a>
+                            <a href="#" class="block text-lg font-semibold text-gray-700">Botlar</a>
+                            <a href="#" class="block text-lg font-semibold text-gray-700">Sandaletler</a>
+                            <a href="#" class="block text-lg font-semibold text-gray-700">Çizmeler</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                            class="mobile-accordion-btn w-full flex justify-between items-center text-xl font-bold border-b border-gray-100 pb-4">
+                            <span>AKSESUARLAR</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
+                            <a href="#" class="block text-lg font-semibold text-gray-700">Çoraplar</a>
+                            <a href="#" class="block text-lg font-semibold text-gray-700">Tabanlıklar</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">MAĞAZA BULUCU</a></li>
+                    <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">REHBERLER</a></li>
+                    <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">SÜRDÜRÜLEBİLİRLİK</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mt-auto pt-8 border-t border-gray-100 flex justify-start items-center text-black">
+                <div class="flex space-x-8">
+                    <button class="flex flex-col items-center">
+                        <i class="fa-solid fa-globe text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase">DİL</span>
+                    </button>
+                    <button class="flex flex-col items-center">
+                        <i class="fa-solid fa-magnifying-glass text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase">ARA</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main>
         <!-- Hero Slider -->
@@ -74,7 +191,7 @@
                 </div>
                 <div class="sg-slide-overlay"></div>
                 <div class="sg-slide-content">
-                    <h2 class="sg-slide-title">POWERED BY PERFORMANCE</h2>
+                    <h2 class="sg-slide-title">PERFORMANSIN GÜCÜ</h2>
                     <a href="#" class="sg-slide-cta">KOLEKSİYONU KEŞFET</a>
                 </div>
             </article>
@@ -86,7 +203,7 @@
                 </div>
                 <div class="sg-slide-overlay"></div>
                 <div class="sg-slide-content">
-                    <h2 class="sg-slide-title">ENGINEERED FOR EXTREMES</h2>
+                    <h2 class="sg-slide-title">ZORLU KOŞULLAR İÇİN TASARLANDI</h2>
                     <a href="#" class="sg-slide-cta">TEKNOLOJİYİ İNCELE</a>
                 </div>
             </article>
@@ -154,6 +271,60 @@
             </div>
         </section>
 
+        <!-- Featured Selection -->
+        <section class="featured-section px-10 py-24">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                    <div>
+                        <h2 class="text-5xl md:text-7xl">ÖZEL<br><span class="text-accent">SEÇKİ</span></h2>
+                        <p class="text-white/40 mt-6 max-w-md uppercase tracking-widest text-xs font-bold">2026 PREMİUM
+                            KOLEKSİYON - MAKSİMUM PERFORMANS İÇİN TASARLANDI</p>
+                    </div>
+                    <a href="#" class="sg-slide-cta mt-8 md:mt-0">TÜM ÜRÜNLERİ GÖR</a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Product 1 -->
+                    <div class="product-card reveal delay-1">
+                        <div class="product-img-box">
+                            <img src="assets/img/products/shoe1.png" alt="Oxygrid X-1" class="product-img">
+                            <div class="product-tag">YENİ</div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">OXYGRID X-1</h3>
+                            <p class="product-tech">AIR-TECH / S3L SRC</p>
+                            <div class="product-price">189.00 €</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card reveal delay-2">
+                        <div class="product-img-box">
+                            <img src="assets/img/products/boot1.png" alt="Titanium Pro" class="product-img">
+                            <div class="product-tag">EN ÇOK SATAN</div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">TITANIUM PRO</h3>
+                            <p class="product-tech">COMPOUND / WR HI CI</p>
+                            <div class="product-price">245.00 €</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card reveal delay-3">
+                        <div class="product-img-box">
+                            <img src="assets/img/products/sandal1.png" alt="Airstream S" class="product-img">
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">AIRSTREAM S</h3>
+                            <p class="product-tech">NEFES ALABİLİR / ESD</p>
+                            <div class="product-price">165.00 €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Technology Showcase -->
         <section class="tech-section">
             <div class="tech-grid-bg"></div>
@@ -193,7 +364,7 @@
             </video>
             <div class="video-overlay"></div>
             <div class="video-content">
-                <h2 class="text-4xl md:text-7xl mb-8 reveal">LIMITLESS<br>PROTECTION</h2>
+                <h2 class="text-4xl md:text-7xl mb-8 reveal">SINIRSIZ<br>KORUMA</h2>
                 <a href="#" class="sg-slide-cta reveal">HİKAYEMİZİ İZLE</a>
             </div>
         </section>
@@ -349,6 +520,40 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        if (mobileMenuTrigger && mobileMenuOverlay) {
+            mobileMenuTrigger.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileMenuClose && mobileMenuOverlay) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Mobile Accordions
+        const accordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+
+                content.classList.toggle('hidden');
+                if (icon) {
+                    icon.classList.toggle('fa-plus');
+                    icon.classList.toggle('fa-xmark');
+                }
+            });
         });
 
         // Scroll Reveal
