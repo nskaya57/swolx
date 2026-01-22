@@ -21,7 +21,7 @@
     </script>
 
     <!-- Custom Style -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -407,46 +407,91 @@
                         </video>
                     </div>
                     <div class="space-y-8">
-                        <h2 class="text-4xl md:text-6xl font-black uppercase italic text-black">OXYGRID<br><span
-                                class="text-[#E60000]">DYNAMICS</span></h2>
+                        <h2 class="text-4xl md:text-6xl font-black uppercase text-black leading-tight tracking-tight">
+                            OXYGRID<br><span class="text-[#E60000]">DYNAMICS</span></h2>
 
                         <div class="border-l-4 border-[#E60000] pl-6 reveal">
-                            <div class="text-2xl font-black text-black">S3L SRC</div>
-                            <div class="text-gray-600 text-sm uppercase tracking-wider">GÜVENLİK STANDARDI</div>
+                            <div class="text-2xl font-bold text-black tracking-tight">S3L SRC</div>
+                            <div class="text-gray-500 text-sm uppercase tracking-widest font-semibold mt-1">GÜVENLİK
+                                STANDARDI</div>
                         </div>
 
                         <div class="border-l-4 border-[#E60000] pl-6 reveal">
-                            <div class="text-2xl font-black text-black">COMPOUND</div>
-                            <div class="text-gray-600 text-sm uppercase tracking-wider">HAFİF KOMPOZİT BURUN</div>
+                            <div class="text-2xl font-bold text-black tracking-tight">COMPOUND</div>
+                            <div class="text-gray-500 text-sm uppercase tracking-widest font-semibold mt-1">HAFİF
+                                KOMPOZİT BURUN</div>
                         </div>
 
                         <div class="border-l-4 border-[#E60000] pl-6 reveal">
-                            <div class="text-2xl font-black text-black">AIR-TECH</div>
-                            <div class="text-gray-600 text-sm uppercase tracking-wider">360° NEFES ALABİLİR YAPI</div>
+                            <div class="text-2xl font-bold text-black tracking-tight">AIR-TECH</div>
+                            <div class="text-gray-500 text-sm uppercase tracking-widest font-semibold mt-1">360° NEFES
+                                ALABİLİR YAPI</div>
                         </div>
 
                         <a href="#"
-                            class="inline-block bg-[#E60000] text-white font-bold uppercase px-8 py-4 rounded hover:bg-[#FF1A1A] transition-colors mt-4">TEKNİK
+                            class="inline-block bg-[#E60000] text-white font-bold uppercase px-10 py-4 rounded-[2px] hover:bg-[#C20000] transition-colors mt-6 tracking-widest text-[13px] shadow-lg">TEKNİK
                             DETAYLAR</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Info Grid -->
-        <section class="info-section">
-            <div class="info-item">
-                <img src="assets/img/hero-slider-1.png" alt="Katalog">
-                <div class="info-text">
-                    <h2 class="info-title">2025<br>KATALOG</h2>
-                    <a href="#" class="inline-block mt-4 text-xs tracking-widest font-bold">PDF İNDİR →</a>
+        <!-- Info Accordion Section -->
+        <section class="info-accordion">
+            <div class="info-panel active" data-panel="0">
+                <div class="info-panel-header">
+                    <span class="panel-number">01</span>
+                    <h2 class="info-panel-title">2025 KATALOG</h2>
+                    <i class="fa-solid fa-plus panel-icon"></i>
+                </div>
+                <div class="info-panel-content">
+                    <img src="assets/img/info-katalog.png" alt="Katalog">
+                    <div class="panel-overlay-content">
+                        <h2 class="panel-active-title">2025 KATALOG</h2>
+                        <a href="#" class="panel-link">PDF İNDİR <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="info-item">
-                <img src="assets/img/hero-slider-2.png" alt="Bakım Klavuzu">
-                <div class="info-text">
-                    <h2 class="info-title">BAKIM<br>KLAVUZU</h2>
-                    <a href="#" class="inline-block mt-4 text-xs tracking-widest font-bold">NASIL KORUNUR? →</a>
+            <div class="info-panel" data-panel="1">
+                <div class="info-panel-header">
+                    <span class="panel-number">02</span>
+                    <h2 class="info-panel-title">BAKIM KLAVUZU</h2>
+                    <i class="fa-solid fa-plus panel-icon"></i>
+                </div>
+                <div class="info-panel-content">
+                    <img src="assets/img/info-bakim.png" alt="Bakım Klavuzu">
+                    <div class="panel-overlay-content">
+                        <h2 class="panel-active-title">BAKIM KLAVUZU</h2>
+                        <a href="#" class="panel-link">NASIL KORUNUR? <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="info-panel" data-panel="2">
+                <div class="info-panel-header">
+                    <span class="panel-number">03</span>
+                    <h2 class="info-panel-title">AYAKKABI REHBERLERİ</h2>
+                    <i class="fa-solid fa-plus panel-icon"></i>
+                </div>
+                <div class="info-panel-content">
+                    <img src="assets/img/info-rehber.png" alt="Rehberler">
+                    <div class="panel-overlay-content">
+                        <h2 class="panel-active-title">AYAKKABI REHBERLERİ</h2>
+                        <a href="#" class="panel-link">KEŞFET <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="info-panel" data-panel="3">
+                <div class="info-panel-header">
+                    <span class="panel-number">04</span>
+                    <h2 class="info-panel-title">MAĞAZA BULUCU</h2>
+                    <i class="fa-solid fa-plus panel-icon"></i>
+                </div>
+                <div class="info-panel-content">
+                    <img src="assets/img/info-magaza.png" alt="Mağaza Bulucu">
+                    <div class="panel-overlay-content">
+                        <h2 class="panel-active-title">MAĞAZA BULUCU</h2>
+                        <a href="#" class="panel-link">MAĞAZA BUL <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -455,95 +500,101 @@
         <section class="seo-section px-10">
             <div class="max-w-[1400px] mx-auto">
                 <div class="seo-card reveal">
-                    <h2 class="text-2xl md:text-4xl mb-8">SWOLX: ENDÜSTRİYEL PERFORMANS VE GÜVENLİK</h2>
-                    <div class="grid lg:grid-cols-2 gap-12 text-white/60 leading-relaxed">
+                    <h2 class="text-2xl md:text-4xl mb-8 font-bold text-black"
+                        style="font-family: 'Inter', sans-serif;">SWOLX: ENDÜSTRİYEL PERFORMANS VE GÜVENLİK</h2>
+                    <div class="grid lg:grid-cols-2 gap-12 text-black/70 leading-relaxed font-medium">
                         <p>Swolx, endüstriyel iş güvenliği ayakkabılarında inovasyon ve tasarımı bir araya getirerek,
                             zorlu çalışma koşullarında maksimum performans ve konfor sunar. Yüksek kaliteli malzemeler
-                            ve ileri teknoloji ile üretilen ürünlerimiz, sadece koruma sağlamakla kalmıyor, aynı zamanda
-                            kullanıcının ergonomisini ve hareket kabiliyetini de optimize ediyor.</p>
-                        <p>Koleksiyonumuzdaki her bir ürün, zorlu testlerden geçerek uluslararası güvenlik
-                            standartlarına (EN ISO 20345) tam uyum sağlar. Çelik veya kompozit burun koruması,
-                            anti-perforasyon ara taban, kaymaz (SRC) dış taban ve nefes alabilen iç astar gibi
-                            özellikler, Swolx ayakkabılarının temel taşlarını oluşturur.</p>
+                            ve ileri teknoloji üretim süreçleriyle geliştirdiğimiz ürünlerimiz, EN ISO 20345:2011
+                            standartlarına tam uyumluluk gösterir.</p>
+                        <p>İş güvenliği sadece bir zorunluluk değil, bir kültürdür. Swolx olarak, çalışanların
+                            güvenliğini en üst düzeyde tutarken, ergonomik tasarımlarımızla gün boyu konfor
+                            sağlıyoruz. Her bir modelimiz, AR-GE laboratuvarlarımızda titiz testlerden geçirilerek
+                            sizlere sunulmaktadır.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-logo font-black tracking-tighter text-black">SWOLX</h3>
+                    <div class="space-y-4 max-w-md">
+                        <p class="text-black/60 text-sm leading-relaxed font-medium">
+                            Swolx, endüstriyel ortamlarda çalışanlar için yüksek performanslı, sıfır tavizli güvenlik
+                            ayakkabıları üretir.
+                            Gelişmiş teknolojilerimiz ve premium tasarım anlayışımızla, iş güvenliğini bir üst seviyeye
+                            taşıyoruz.
+                        </p>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading text-black">MÜŞTERİ HİZMETLERİ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">İletişim</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Sıkça Sorulan Sorular</a>
+                        </li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Mağaza Bulucu</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Bakım Kılavuzu</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading text-black">KURUMSAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Hakkımızda</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Felsefemiz</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Sürdürülebilirlik</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Topluluk</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading text-black">YASAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Gizlilik Politikası</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Çerez Politikası</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Kullanım Şartları</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Erişilebilirlik</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-lang-col">
+                    <h4 class="footer-heading text-black">DİL DEĞİŞTİR</h4>
+                    <div class="lang-selector border-black/10">
+                        <button id="footer-lang-trigger" class="lang-btn text-black">
+                            <span>TÜRKİYE</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <p class="text-[10px] text-black/40 mt-2 uppercase font-bold">Global / English</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-20 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
+                <p class="text-[10px] text-black/40 tracking-widest uppercase font-bold">© 2026 SWOLX. TÜM HAKLARI
+                    SAKLIDIR.</p>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] text-black/40 hover:text-black transition-colors uppercase tracking-widest font-bold">BİLGİ
+                        GÜVENLİĞİ</a>
+                    <a href="#"
+                        class="text-[10px] text-black/40 hover:text-black transition-colors uppercase tracking-widest font-bold">ÇEREZ
+                        AYARLARI</a>
+                </div>
+            </div>
+        </footer>
     </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="col-span-2 lg:col-span-2">
-                <h2 class="footer-logo font-black italic">SWOLX</h2>
-                <div class="space-y-4 max-w-md">
-                    <p class="text-sm font-bold text-white uppercase tracking-tighter">SWOLX: TAVİZSİZ PERFORMANS,
-                        MAKSİMUM GÜVENLİK.</p>
-                    <p class="text-white/40 text-sm leading-relaxed">
-                        Swolx, endüstriyel ortamlarda çalışanlar için yüksek performanslı, sıfır tavizli güvenlik
-                        ayakkabıları üretir.
-                        Gelişmiş teknolojilerimiz ve premium tasarım anlayışımızla, iş güvenliğini bir üst seviyeye
-                        taşıyoruz.
-                    </p>
-                </div>
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="footer-heading">MÜŞTERİ HİZMETLERİ</h4>
-                <ul class="footer-links">
-                    <li><a href="#">İletişim</a></li>
-                    <li><a href="#">Sıkça Sorulan Sorular</a></li>
-                    <li><a href="#">Mağaza Bulucu</a></li>
-                    <li><a href="#">Bakım Kılavuzu</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="footer-heading">KURUMSAL</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Hakkımızda</a></li>
-                    <li><a href="#">Felsefemiz</a></li>
-                    <li><a href="#">Sürdürülebilirlik</a></li>
-                    <li><a href="#">Topluluk</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="footer-heading">YASAL</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Gizlilik Politikası</a></li>
-                    <li><a href="#">Çerez Politikası</a></li>
-                    <li><a href="#">Kullanım Şartları</a></li>
-                    <li><a href="#">Erişilebilirlik</a></li>
-                </ul>
-                <h4 class="footer-heading mt-12">DİL DEĞİŞTİR</h4>
-                <div class="lang-selector">
-                    <button id="footer-lang-trigger" class="lang-btn">
-                        <span>TÜRKİYE</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <p class="text-[10px] text-white/30 mt-2 uppercase">Global / English</p>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
-            <p class="text-[10px] text-white/20 tracking-widest uppercase">© 2026 SWOLX. TÜM HAKLARI SAKLIDIR.</p>
-            <div class="flex gap-8">
-                <a href="#"
-                    class="text-[10px] text-white/20 hover:text-white transition-colors uppercase tracking-widest">GÜVENLİK</a>
-                <a href="#"
-                    class="text-[10px] text-white/20 hover:text-white transition-colors uppercase tracking-widest">ÇEREZ
-                    AYARLARI</a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Hero Slider
@@ -758,6 +809,15 @@
                 langDrawer.classList.add('translate-x-full');
                 document.body.style.overflow = '';
             }
+        });
+
+        // Info Accordion Toggle
+        const infoPanels = document.querySelectorAll('.info-panel');
+        infoPanels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                infoPanels.forEach(p => p.classList.remove('active'));
+                panel.classList.add('active');
+            });
         });
 
         // Scroll Reveal
