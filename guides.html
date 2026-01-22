@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOLX | Rehberler</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#E60000',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body class="bg-white text-black">
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10 bg-white shadow-sm">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center">
+            <img src="assets/img/logo/swolx-logo-renkli.png" alt="SWOLX Logo"
+                class="header-logo-img h-11 md:h-12 w-auto transition-all duration-300">
+        </a>
+
+        <!-- Main Navigation -->
+        <nav class="hidden lg:flex flex-grow justify-center">
+            <ul class="flex space-x-8">
+                <li class="group/mega">
+                    <a href="#" class="nav-link py-8">Ürünler</a>
+                    <div
+                        class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
+                        <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Ayakkabılar</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Botlar</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Sandaletler</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Çizmeler</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="group/mega">
+                    <a href="#" class="nav-link py-8">Aksesuarlar</a>
+                    <div
+                        class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
+                        <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Çoraplar</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Tabanlıklar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="dealers.html" class="nav-link py-8">Bayilerimiz</a></li>
+                <li><a href="guides.html" class="nav-link py-8 text-accent">Rehberler</a></li>
+                <li><a href="#" class="nav-link py-8">Sürdürülebilirlik</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right Side Icons -->
+        <div class="flex items-center space-x-6 text-black">
+            <button id="lang-trigger"
+                class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
+                <i class="fa-solid fa-globe text-lg mb-0.5"></i>
+                <span class="text-[8px] font-bold uppercase tracking-tight">DİL</span>
+            </button>
+
+            <button
+                class="search-trigger hidden lg:flex flex-col items-center group transition-colors hover:text-accent"
+                aria-label="Ara">
+                <i class="fa-solid fa-magnifying-glass text-lg mb-0.5"></i>
+                <span class="text-[8px] font-bold uppercase tracking-tight">ARA</span>
+            </button>
+
+            <button id="mobile-menu-trigger"
+                class="lg:hidden text-black hover:text-accent transition-colors p-2 border-2 border-transparent focus:border-blue-600 rounded-lg"
+                aria-label="Open mobile menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-white z-[100] translate-x-full transition-transform duration-500 lg:hidden overflow-y-auto">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex flex-row-reverse justify-between items-center mb-12">
+                <button id="mobile-menu-close" class="p-2 border-2 border-black rounded-sm text-black"
+                    aria-label="Close mobile menu">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+                <img src="assets/img/logo/swolx-logo-renkli.png" alt="SWOLX Logo" class="h-14 w-auto">
+            </div>
+
+            <nav class="flex-grow text-black">
+                <ul class="space-y-6">
+                    <li>
+                        <button
+                            class="mobile-accordion-btn w-full flex justify-between items-center text-xl font-bold border-b border-gray-100 pb-4">
+                            <span>ÜRÜNLER</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Ayakkabılar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Botlar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Sandaletler</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Çizmeler</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                            class="mobile-accordion-btn w-full flex justify-between items-center text-xl font-bold border-b border-gray-100 pb-4">
+                            <span>AKSESUARLAR</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Çoraplar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Tabanlıklar</a>
+                        </div>
+                    </li>
+                    <li><a href="dealers.html"
+                            class="block text-xl font-bold border-b border-gray-100 pb-4">BAYİLERİMİZ</a></li>
+                    <li><a href="guides.html"
+                            class="block text-xl font-bold border-b border-gray-100 pb-4 text-accent">REHBERLER</a></li>
+                    <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">SÜRDÜRÜLEBİLİRLİK</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mt-auto pt-8 border-t border-gray-100 flex justify-start items-center text-black">
+                <div class="flex space-x-8">
+                    <button id="mobile-lang-trigger" class="flex flex-col items-center">
+                        <i class="fa-solid fa-globe text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase">DİL</span>
+                    </button>
+                    <button class="search-trigger flex flex-col items-center">
+                        <i class="fa-solid fa-magnifying-glass text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase">ARA</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-[#F8F9FA] backdrop-blur-2xl z-[200] flex flex-col opacity-0 invisible">
+        <div class="p-6 md:p-10 flex justify-end">
+            <button id="search-close" class="text-black hover:text-accent transition-colors p-4" aria-label="Kapat">
+                <i class="fa-solid fa-xmark text-4xl"></i>
+            </button>
+        </div>
+        <div class="flex-grow flex items-start justify-center px-4 md:px-6 pt-[10vh] md:pt-[15vh]">
+            <div class="w-full max-w-4xl relative reveal-search">
+                <div
+                    class="relative flex items-center bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl px-4 md:px-6 focus-within:border-accent group transition-all shadow-sm">
+                    <i
+                        class="fa-solid fa-magnifying-glass text-gray-400 text-lg md:text-2xl mr-3 md:mr-4 group-focus-within:text-accent transition-colors"></i>
+                    <input type="text" id="search-input" placeholder="Ne aramıştınız?"
+                        class="w-full bg-transparent py-4 md:py-8 text-lg md:text-3xl text-black placeholder:text-gray-400 focus:outline-none font-bold italic uppercase">
+                </div>
+                <div class="mt-8 md:mt-12 flex flex-wrap gap-2 md:gap-4">
+                    <span
+                        class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest w-full mb-2">Popüler
+                        Aramalar</span>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Oxygrid</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">S3L
+                        SRC</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Botlar</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Sandalet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Drawer (Same as dealers.html) -->
+    <div id="lang-drawer"
+        class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-[300] translate-x-full transition-transform duration-500 shadow-2xl flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h3 class="text-black font-bold text-xl uppercase italic">DİL SEÇİMİ</h3>
+            <button id="lang-close" class="text-black hover:text-accent p-2" aria-label="Kapat">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <div class="flex-grow overflow-y-auto py-4">
+            <ul class="space-y-1">
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="tr">
+                        <span
+                            class="w-8 h-5 bg-[#E30A17] rounded-sm mr-4 relative overflow-hidden flex items-center justify-center">
+                            <svg viewBox="0 0 1200 800" class="w-full h-full">
+                                <rect width="1200" height="800" fill="#E30A17" />
+                                <circle cx="425" cy="400" r="200" fill="#fff" />
+                                <circle cx="475" cy="400" r="160" fill="#E30A17" />
+                                <polygon points="575,400 701,359 653,491 575,400" fill="#fff"
+                                    transform="translate(100,0) rotate(-18 575 400)" />
+                            </svg>
+                        </span>
+                        <span class="text-black font-semibold">TÜRKÇE</span>
+                        <i class="fa-solid fa-check ml-auto text-accent"></i>
+                    </button>
+                </li>
+                <!-- Other langs simplified for brevity -->
+            </ul>
+        </div>
+        <div class="p-8 bg-gray-50">
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Global / English</p>
+        </div>
+    </div>
+
+
+    <main class="pt-[90px]">
+        <!-- Page Hero -->
+        <section class="py-12 md:py-16 bg-white border-b border-gray-100">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+                <nav class="flex items-center text-xs text-gray-500 font-bold uppercase tracking-widest mb-6 space-x-2">
+                    <a href="index.html" class="hover:text-black transition-colors">Ana Sayfa</a>
+                    <span>/</span>
+                    <span class="text-black">Rehberler</span>
+                </nav>
+
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+                    <div class="max-w-3xl">
+                        <h1
+                            class="text-5xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-none italic">
+                            REHBERLER
+                        </h1>
+                        <p class="text-gray-600 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+                            SWOLX ürünlerinizi en verimli şekilde kullanmak, bakımını yapmak ve güvenlik standartları
+                            hakkında bilgi almak için rehberlerimizi inceleyin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Grid Section -->
+        <section class="py-12 md:py-16 bg-white">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+                    <!-- Guide Card 1: Care Guide -->
+                    <div
+                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
+                        <div class="absolute inset-0">
+                            <img src="assets/img/guide_care.png" alt="Bakım Klavuzu"
+                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
+                            <!-- Noise/Grain Overlay -->
+                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+                            <!-- Inner Shadow for Depth -->
+                            <div
+                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
+                            <div
+                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
+                                <span class="text-black font-black text-sm md:text-lg text-center">Bakım
+                                    Klavuzu</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guide Card 2: FAQ -->
+                    <div
+                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
+                        <div class="absolute inset-0">
+                            <img src="assets/img/guide_faq.png" alt="Sık Sorulan Sorular"
+                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+                            <!-- Inner Shadow for Depth -->
+                            <div
+                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
+                            <div
+                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
+                                <span class="text-black font-black text-sm md:text-lg text-center">Sık
+                                    Sorulan Sorular</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guide Card 3: Technology -->
+                    <div
+                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
+                        <div class="absolute inset-0">
+                            <img src="assets/img/guide_tech.png" alt="Teknoloji"
+                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+                            <!-- Inner Shadow for Depth -->
+                            <div
+                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
+                            <div
+                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
+                                <span class="text-black font-black text-sm md:text-lg text-center">Teknoloji</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guide Card 4: Safety Classes -->
+                    <div
+                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
+                        <div class="absolute inset-0">
+                            <img src="assets/img/guide_safety.png" alt="Güvenlik Sınıfları"
+                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+                            <!-- Inner Shadow for Depth -->
+                            <div
+                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
+                            <div
+                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
+                                <span class="text-black font-black text-sm md:text-lg text-center">Güvenlik
+                                    Sınıfları</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer (Same as other pages, simplified) -->
+    <footer class="mt-12">
+        <div class="footer-grid">
+            <div>
+                <img src="assets/img/logo/swolx-logo.png" alt="Swolx" class="mb-8 w-48 opacity-90">
+                <div class="space-y-4 max-w-md">
+                    <p class="text-gray-400 text-sm leading-relaxed font-medium">
+                        Swolx, endüstriyel ortamlarda çalışanlar için yüksek performanslı, sıfır tavizli güvenlik
+                        ayakkabıları üretir.
+                    </p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading text-white">MÜŞTERİ HİZMETLERİ</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">İletişim</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">Sıkça Sorulan Sorular</a></li>
+                    <li><a href="dealers.html" class="text-gray-400 hover:text-white font-medium">Bayilerimiz</a></li>
+                    <li><a href="guides.html" class="text-white font-bold">Rehberler</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading text-white">KURUMSAL</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">Hakkımızda</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">Felsefemiz</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">Sürdürülebilirlik</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading text-white">YASAL</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">Gizlilik Politikası</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white font-medium">Kullanım Şartları</a></li>
+                </ul>
+            </div>
+            <div class="footer-lang-col">
+                <h4 class="footer-heading text-white">DİL DEĞİŞTİR</h4>
+                <div class="lang-selector border-white/20">
+                    <button class="lang-btn text-white">
+                        <span>TÜRKİYE</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <p class="text-[10px] text-white/40 mt-2 uppercase font-bold">Global / English</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
+            <p class="text-[10px] text-white/40 tracking-widest uppercase font-bold">© 2026 SWOLX. TÜM HAKLARI SAKLIDIR.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Header Scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        if (mobileMenuTrigger && mobileMenuOverlay) {
+            mobileMenuTrigger.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        if (mobileMenuClose && mobileMenuOverlay) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+        // Easy accordions for mobile
+        const accordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                if (icon) {
+                    icon.classList.toggle('fa-plus');
+                    icon.classList.toggle('fa-xmark');
+                }
+            });
+        });
+
+        // Search Overlay Toggle
+        const searchTriggers = document.querySelectorAll('.search-trigger');
+        const searchClose = document.getElementById('search-close');
+        const searchOverlay = document.getElementById('search-overlay');
+        if (searchTriggers && searchOverlay) {
+            searchTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    searchOverlay.classList.remove('opacity-0', 'invisible');
+                    searchOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+        }
+        if (searchClose && searchOverlay) {
+            searchClose.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                searchOverlay.classList.add('opacity-0', 'invisible');
+                document.body.style.overflow = '';
+            });
+        }
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+                searchOverlay.classList.remove('active');
+                searchOverlay.classList.add('opacity-0', 'invisible');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Language Drawer Toggle
+        const langTrigger = document.getElementById('lang-trigger');
+        const mobileLangTrigger = document.getElementById('mobile-lang-trigger');
+        const langClose = document.getElementById('lang-close');
+        const langDrawer = document.getElementById('lang-drawer');
+
+        const openLangDrawer = () => {
+            langDrawer.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        };
+
+        if (langTrigger && langDrawer) langTrigger.addEventListener('click', openLangDrawer);
+        if (mobileLangTrigger && langDrawer) mobileLangTrigger.addEventListener('click', openLangDrawer);
+
+        if (langClose && langDrawer) {
+            langClose.addEventListener('click', () => {
+                langDrawer.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+    </script>
+</body>
+
+</html>
