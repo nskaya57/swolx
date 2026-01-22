@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOLX | Premium Industrial Performance</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#E60000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-white text-black">
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10 bg-white shadow-sm">
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+            <img src="assets/img/logo/swolx-logo-renkli.png" alt="SWOLX Logo"
+                class="header-logo-img h-11 md:h-12 w-auto transition-all duration-300">
+        </a>
+
+        <!-- Main Navigation -->
+        <nav class="hidden lg:flex flex-grow justify-center">
+            <ul class="flex space-x-8">
+                <li class="group/mega">
+                    <a href="#" class="nav-link py-8">Ürünler</a>
+                    <!-- Mega Menu Dropdown -->
+                    <div
+                        class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
+                        <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Ayakkabılar</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Botlar</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Sandaletler</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Çizmeler</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Add more columns if needed -->
+                        </div>
+                    </div>
+                </li>
+                <li class="group/mega">
+                    <a href="#" class="nav-link py-8">Aksesuarlar</a>
+                    <!-- Mega Menu Dropdown for Accessories -->
+                    <div
+                        class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
+                        <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Çoraplar</a>
+                                    </li>
+                                    <li><a href="category.html"
+                                            class="text-gray-600 hover:text-black transition-colors font-semibold">Tabanlıklar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="dealers.html" class="nav-link py-8">Bayilerimiz</a></li>
+                <li><a href="guides.html" class="nav-link py-8">Rehberler</a></li>
+                <li><a href="contact.html" class="nav-link py-8">İletişim</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right Side Icons -->
+        <div class="flex items-center space-x-6 text-black">
+            <!-- Language (Hidden on Mobile) -->
+            <button id="lang-trigger"
+                class="hidden lg:flex flex-col items-center group transition-colors hover:text-accent">
+                <i class="fa-solid fa-globe text-lg mb-0.5"></i>
+                <span class="text-[8px] font-bold uppercase tracking-tight">DİL</span>
+            </button>
+
+            <!-- Search (Hidden on Mobile) -->
+            <button
+                class="search-trigger hidden lg:flex flex-col items-center group transition-colors hover:text-accent"
+                aria-label="Ara">
+                <i class="fa-solid fa-magnifying-glass text-lg mb-0.5"></i>
+                <span class="text-[8px] font-bold uppercase tracking-tight">ARA</span>
+            </button>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-trigger"
+                class="lg:hidden text-black hover:text-accent transition-colors p-2 border-2 border-transparent focus:border-blue-600 rounded-lg"
+                aria-label="Open mobile menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-white z-[100] translate-x-full transition-transform duration-500 lg:hidden overflow-y-auto">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex flex-row-reverse justify-between items-center mb-12">
+                <button id="mobile-menu-close" class="p-2 border-2 border-black rounded-sm text-black"
+                    aria-label="Close mobile menu">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+                <img src="assets/img/logo/swolx-logo-renkli.png" alt="SWOLX Logo" class="h-14 w-auto">
+            </div>
+
+            <nav class="flex-grow text-black">
+                <!-- Mobile Menu Items -->
+                <ul class="space-y-4">
+                    <li class="border-b border-gray-100 pb-4">
+                        <button
+                            class="w-full flex justify-between items-center text-xl font-bold mobile-accordion-trigger">
+                            <span>Ürünler</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Ayakkabılar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Botlar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Sandaletler</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Çizmeler</a>
+                        </div>
+                    </li>
+                    <li class="border-b border-gray-100 pb-4">
+                        <button
+                            class="w-full flex justify-between items-center text-xl font-bold mobile-accordion-trigger">
+                            <span>Aksesuarlar</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Çoraplar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Tabanlıklar</a>
+                        </div>
+                    </li>
+                    <li><a href="dealers.html"
+                            class="block text-xl font-bold border-b border-gray-100 pb-4">Bayilerimiz</a></li>
+                    <li><a href="guides.html"
+                            class="block text-xl font-bold border-b border-gray-100 pb-4">Rehberler</a></li>
+                    <li><a href="contact.html"
+                            class="block text-xl font-bold border-b border-gray-100 pb-4">İletişim</a></li>
+                </ul>
+            </nav>
+
+            <div class="mt-auto pt-8 border-t border-gray-100 flex justify-start items-center text-black">
+                <div class="flex space-x-8">
+                    <button id="mobile-lang-trigger" class="flex flex-col items-center">
+                        <i class="fa-solid fa-globe text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase">DİL</span>
+                    </button>
+                    <button class="search-trigger flex flex-col items-center">
+                        <i class="fa-solid fa-magnifying-glass text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase">ARA</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-[#F8F9FA] backdrop-blur-2xl z-[200] flex flex-col opacity-0 invisible">
+        <div class="p-6 md:p-10 flex justify-end">
+            <button id="search-close" class="text-black hover:text-accent transition-colors p-4" aria-label="Kapat">
+                <i class="fa-solid fa-xmark text-4xl"></i>
+            </button>
+        </div>
+        <div class="flex-grow flex items-start justify-center px-4 md:px-6 pt-[10vh] md:pt-[15vh]">
+            <div class="w-full max-w-4xl relative reveal-search">
+                <div
+                    class="relative flex items-center bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl px-4 md:px-6 focus-within:border-accent group transition-all shadow-sm">
+                    <i
+                        class="fa-solid fa-magnifying-glass text-gray-400 text-lg md:text-2xl mr-3 md:mr-4 group-focus-within:text-accent transition-colors"></i>
+                    <input type="text" id="search-input" placeholder="Ne aramıştınız?"
+                        class="w-full bg-transparent py-4 md:py-8 text-lg md:text-3xl text-black placeholder:text-gray-400 focus:outline-none font-bold italic uppercase">
+                </div>
+                <div class="mt-8 md:mt-12 flex flex-wrap gap-2 md:gap-4">
+                    <span
+                        class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest w-full mb-2">Popüler
+                        Aramalar</span>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Oxygrid</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">S3L
+                        SRC</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Botlar</a>
+                    <a href="#"
+                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Sandalet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Drawer -->
+    <div id="lang-drawer"
+        class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-[300] translate-x-full transition-transform duration-500 shadow-2xl flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h3 class="text-black font-bold text-xl uppercase italic">DİL SEÇİMİ</h3>
+            <button id="lang-close" class="text-black hover:text-accent p-2" aria-label="Kapat">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <div class="flex-grow overflow-y-auto py-4">
+            <ul class="space-y-1">
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="tr">
+                        <span
+                            class="w-8 h-5 bg-[#E30A17] rounded-sm mr-4 relative overflow-hidden flex items-center justify-center">
+                            <svg viewBox="0 0 1200 800" class="w-full h-full">
+                                <rect width="1200" height="800" fill="#E30A17" />
+                                <circle cx="425" cy="400" r="200" fill="#fff" />
+                                <circle cx="475" cy="400" r="160" fill="#E30A17" />
+                                <polygon points="575,400 701,359 653,491 575,400" fill="#fff"
+                                    transform="translate(100,0) rotate(-18 575 400)" />
+                            </svg>
+                        </span>
+                        <span class="text-black font-semibold">TÜRKÇE</span>
+                        <i class="fa-solid fa-check ml-auto text-accent"></i>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="en">
+                        <span
+                            class="w-8 h-5 bg-[#012169] rounded-sm mr-4 relative overflow-hidden flex items-center justify-center">
+                            <svg viewBox="0 0 60 30" class="w-full h-full">
+                                <clipPath id="s">
+                                    <path d="M0,0 v30 h60 v-30 z" />
+                                </clipPath>
+                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" clip-path="url(#s)" />
+                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"
+                                    clip-path="url(#s)" />
+                                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                            </svg>
+                        </span>
+                        <span class="text-black font-semibold">ENGLISH</span>
+                        <i class="fa-solid fa-check ml-auto text-accent opacity-0"></i>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="de">
+                        <span
+                            class="w-8 h-5 bg-black rounded-sm mr-4 relative overflow-hidden flex flex-col items-center justify-center">
+                            <div class="w-full h-1/3 bg-black"></div>
+                            <div class="w-full h-1/3 bg-[#D00] border-y border-white/5"></div>
+                            <div class="w-full h-1/3 bg-[#FFCE00]"></div>
+                        </span>
+                        <span class="text-black font-semibold">DEUTSCH</span>
+                        <i class="fa-solid fa-check ml-auto text-accent opacity-0"></i>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
+                        data-lang="nl">
+                        <span
+                            class="w-8 h-5 rounded-sm mr-4 relative overflow-hidden flex flex-col items-center justify-center">
+                            <div class="w-full h-1/3 bg-blue-800"></div>
+                            <div class="w-full h-1/3 bg-white border-y border-gray-100"></div>
+                            <div class="w-full h-1/3 bg-red-600"></div>
+                        </span>
+                        <span class="text-black font-semibold">NEDERLANDS</span>
+                        <i class="fa-solid fa-check ml-auto text-accent opacity-0"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="p-8 bg-gray-50">
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Global / English</p>
+        </div>
+    </div>
+
+    <main class="pt-[90px]">
+        <!-- Product Detail Section -->
+        <section class="py-12 md:py-20 bg-white">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+                <div class="grid lg:grid-cols-2 gap-12 xl:gap-20">
+                    <!-- Left: Gallery -->
+                    <div class="product-gallery">
+                        <!-- Main Image -->
+                        <div
+                            class="relative aspect-square bg-gray-50 border border-gray-100 rounded-lg overflow-hidden mb-6 group">
+                            <img src="assets/img/kategori-bot.png" alt="Product Name" id="main-product-img"
+                                class="w-full h-full object-contain p-12 transition-transform duration-500 group-hover:scale-105">
+                            <div
+                                class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 uppercase italic tracking-wider">
+                                YENİ
+                            </div>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div class="grid grid-cols-4 gap-4">
+                            <button
+                                class="gallery-thumb active aspect-square bg-gray-50 border border-gray-200 rounded-md overflow-hidden hover:border-accent transition-colors">
+                                <img src="assets/img/kategori-bot.png" alt="View 1"
+                                    class="w-full h-full object-contain p-2">
+                            </button>
+                            <button
+                                class="gallery-thumb aspect-square bg-gray-50 border border-gray-200 rounded-md overflow-hidden hover:border-accent transition-colors">
+                                <img src="assets/img/kategori-bot.png" alt="View 2"
+                                    class="w-full h-full object-contain p-2">
+                            </button>
+                            <button
+                                class="gallery-thumb aspect-square bg-gray-50 border border-gray-200 rounded-md overflow-hidden hover:border-accent transition-colors">
+                                <img src="assets/img/kategori-bot.png" alt="View 3"
+                                    class="w-full h-full object-contain p-2">
+                            </button>
+                            <button
+                                class="gallery-thumb aspect-square bg-gray-50 border border-gray-200 rounded-md overflow-hidden hover:border-accent transition-colors">
+                                <img src="assets/img/kategori-bot.png" alt="View 4"
+                                    class="w-full h-full object-contain p-2">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Product Info -->
+                    <div class="product-info">
+                        <div class="mb-2 text-gray-400 font-bold uppercase tracking-widest text-xs">
+                            <a href="index.html" class="hover:text-accent transition-colors">Ana Sayfa</a> /
+                            <a href="category.html" class="hover:text-accent transition-colors">Botlar</a> /
+                            <span class="text-black">Model X-500</span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-5xl font-black uppercase italic text-black mb-4 leading-none">
+                            SWOLX <span class="text-accent">X-500</span><br>PRO SERIES
+                        </h1>
+
+                        <div class="flex items-center gap-6 mb-8 border-b border-gray-100 pb-8">
+                            <div>
+                                <div class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Ürün
+                                    Kodu</div>
+                                <div class="font-bold text-lg">SW-2025-X5</div>
+                            </div>
+                            <div class="h-8 w-px bg-gray-200"></div>
+                            <div>
+                                <div class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Güvenlik
+                                    Sınıfı</div>
+                                <div class="font-bold text-lg text-accent">S3L SRC HRO</div>
+                            </div>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div class="product-tabs">
+                            <div class="flex border-b border-gray-200 mb-6 overflow-x-auto">
+                                <button
+                                    class="tab-btn active px-0 py-4 mr-8 text-sm font-bold uppercase tracking-widest border-b-2 border-accent text-black transition-colors"
+                                    data-tab="desc">
+                                    Açıklama
+                                </button>
+                                <button
+                                    class="tab-btn px-0 py-4 mr-8 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-black transition-colors"
+                                    data-tab="docs">
+                                    Dökümanlar
+                                </button>
+                                <button
+                                    class="tab-btn px-0 py-4 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-black transition-colors"
+                                    data-tab="safety">
+                                    Güvenlik
+                                </button>
+                            </div>
+
+                            <!-- Tab Contents -->
+                            <div class="tab-content active transition-opacity duration-300" id="tab-desc">
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Zorlu endüstriyel koşullar için tasarlanan X-500, üstün koruma ve konfor sunar.
+                                    Oxygrid Dynamics taban teknolojisi sayesinde her adımda enerji geri dönüşümü sağlar.
+                                    Su geçirmez yapısı ve nefes alabilir astarı ile gün boyu kuruluk ve rahatlık garanti
+                                    eder.
+                                </p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Hafif kompozit burun koruması, çelik burunlara göre %40 daha hafiftir ve aynı
+                                    güvenlik standartlarını karşılar.
+                                    Antistatik özelliği ve kaymaz tabanı ile maksimum güvenlik sunar.
+                                </p>
+                            </div>
+
+                            <div class="tab-content hidden transition-opacity duration-300" id="tab-docs">
+                                <div class="space-y-4">
+                                    <a href="#"
+                                        class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-accent group transition-colors bg-gray-50">
+                                        <div
+                                            class="w-10 h-10 bg-white border border-gray-200 rounded flex items-center justify-center text-red-600 mr-4">
+                                            <i class="fa-solid fa-file-pdf text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="font-bold text-sm uppercase group-hover:text-accent transition-colors">
+                                                Teknik Bilgi Föyü (TDS)</div>
+                                            <div class="text-xs text-gray-400">PDF, 2.4 MB</div>
+                                        </div>
+                                        <i
+                                            class="fa-solid fa-download ml-auto text-gray-400 group-hover:text-accent"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-accent group transition-colors bg-gray-50">
+                                        <div
+                                            class="w-10 h-10 bg-white border border-gray-200 rounded flex items-center justify-center text-red-600 mr-4">
+                                            <i class="fa-solid fa-certificate text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="font-bold text-sm uppercase group-hover:text-accent transition-colors">
+                                                CE Sertifikası</div>
+                                            <div class="text-xs text-gray-400">PDF, 1.1 MB</div>
+                                        </div>
+                                        <i
+                                            class="fa-solid fa-download ml-auto text-gray-400 group-hover:text-accent"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-accent group transition-colors bg-gray-50">
+                                        <div
+                                            class="w-10 h-10 bg-white border border-gray-200 rounded flex items-center justify-center text-blue-600 mr-4">
+                                            <i class="fa-solid fa-file-zipper text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="font-bold text-sm uppercase group-hover:text-accent transition-colors">
+                                                Ürün Görselleri</div>
+                                            <div class="text-xs text-gray-400">ZIP, 15.6 MB</div>
+                                        </div>
+                                        <i
+                                            class="fa-solid fa-download ml-auto text-gray-400 group-hover:text-accent"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="tab-content hidden transition-opacity duration-300" id="tab-safety">
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <li
+                                        class="flex items-center p-3 bg-gray-50 rounded border border-transparent hover:border-gray-200">
+                                        <i class="fa-solid fa-shield-halved text-accent text-lg mr-3"></i>
+                                        <span class="text-sm font-semibold">Kompozit Burun</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center p-3 bg-gray-50 rounded border border-transparent hover:border-gray-200">
+                                        <i class="fa-solid fa-bolt text-accent text-lg mr-3"></i>
+                                        <span class="text-sm font-semibold">Antistatik (A)</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center p-3 bg-gray-50 rounded border border-transparent hover:border-gray-200">
+                                        <i class="fa-solid fa-droplet-slash text-accent text-lg mr-3"></i>
+                                        <span class="text-sm font-semibold">Su Geçirmez (WR)</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center p-3 bg-gray-50 rounded border border-transparent hover:border-gray-200">
+                                        <i class="fa-solid fa-shoe-prints text-accent text-lg mr-3"></i>
+                                        <span class="text-sm font-semibold">Kaymaz Taban (SRC)</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center p-3 bg-gray-50 rounded border border-transparent hover:border-gray-200">
+                                        <i class="fa-solid fa-layer-group text-accent text-lg mr-3"></i>
+                                        <span class="text-sm font-semibold">Şok Emici Topuk (E)</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center p-3 bg-gray-50 rounded border border-transparent hover:border-gray-200">
+                                        <i class="fa-solid fa-fire text-accent text-lg mr-3"></i>
+                                        <span class="text-sm font-semibold">Isıya Dayanıklı (HRO)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="py-16 md:py-24 bg-gray-50 border-t border-gray-100 relative overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+                <div class="flex flex-col md:flex-row justify-between items-end md:items-center mb-12 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-black uppercase italic text-black leading-none">
+                            BENZER <span class="text-accent">ÜRÜNLER</span>
+                        </h2>
+                        <div class="h-1 w-20 bg-accent mt-4"></div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="flex gap-2">
+                        <button id="related-prev" aria-label="Previous Product"
+                            class="w-12 h-12 flex items-center justify-center border border-gray-300 text-black hover:bg-black hover:text-white hover:border-black transition-all rounded-full disabled:opacity-30">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="related-next" aria-label="Next Product"
+                            class="w-12 h-12 flex items-center justify-center border border-gray-300 text-black hover:bg-black hover:text-white hover:border-black transition-all rounded-full disabled:opacity-30">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Slider Container -->
+                <div class="relative">
+                    <div id="related-slider"
+                        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-4 px-4 md:px-0">
+                        <!-- Product Card 1 -->
+                        <a href="product-detail.html"
+                            class="min-w-[280px] md:min-w-[320px] bg-white border border-gray-100 rounded-lg overflow-hidden group snap-start hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-50 p-6 relative overflow-hidden">
+                                <img src="assets/img/kategori-bot.png" alt="Pro X-100"
+                                    class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 right-4 bg-gray-900 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
+                                    S3 SRC</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="text-lg font-bold uppercase italic text-black group-hover:text-accent transition-colors">
+                                    SWOLX X-100</h3>
+                                <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">PRO SERIES</p>
+                            </div>
+                        </a>
+
+                        <!-- Product Card 2 -->
+                        <a href="product-detail.html"
+                            class="min-w-[280px] md:min-w-[320px] bg-white border border-gray-100 rounded-lg overflow-hidden group snap-start hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-50 p-6 relative overflow-hidden">
+                                <img src="assets/img/kategori-ayakkabi.png" alt="Pro A-200"
+                                    class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 right-4 bg-gray-900 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
+                                    S1P</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="text-lg font-bold uppercase italic text-black group-hover:text-accent transition-colors">
+                                    SWOLX A-200</h3>
+                                <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">AIR SERIES</p>
+                            </div>
+                        </a>
+
+                        <!-- Product Card 3 -->
+                        <a href="product-detail.html"
+                            class="min-w-[280px] md:min-w-[320px] bg-white border border-gray-100 rounded-lg overflow-hidden group snap-start hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-50 p-6 relative overflow-hidden">
+                                <img src="assets/img/kategori-bot.png" alt="Pro X-300"
+                                    class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 right-4 bg-gray-900 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
+                                    S3 HRO</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="text-lg font-bold uppercase italic text-black group-hover:text-accent transition-colors">
+                                    SWOLX X-300</h3>
+                                <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">HEAVY DUTY</p>
+                            </div>
+                        </a>
+
+                        <!-- Product Card 4 -->
+                        <a href="product-detail.html"
+                            class="min-w-[280px] md:min-w-[320px] bg-white border border-gray-100 rounded-lg overflow-hidden group snap-start hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-50 p-6 relative overflow-hidden">
+                                <img src="assets/img/kategori-cizme.png" alt="Pro C-400"
+                                    class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 right-4 bg-gray-900 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
+                                    S5 CI</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="text-lg font-bold uppercase italic text-black group-hover:text-accent transition-colors">
+                                    SWOLX C-400</h3>
+                                <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">WATERPROOF</p>
+                            </div>
+                        </a>
+
+                        <!-- Product Card 5 (For Scroll Test) -->
+                        <a href="product-detail.html"
+                            class="min-w-[280px] md:min-w-[320px] bg-white border border-gray-100 rounded-lg overflow-hidden group snap-start hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-50 p-6 relative overflow-hidden">
+                                <img src="assets/img/kategori-sandalet.png" alt="Pro S-100"
+                                    class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 right-4 bg-gray-900 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
+                                    S1</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="text-lg font-bold uppercase italic text-black group-hover:text-accent transition-colors">
+                                    SWOLX S-100</h3>
+                                <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">SUMMER</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+
+        <footer>
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/img/logo/swolx-logo.png" alt="Swolx" class="mb-8 w-48 opacity-90">
+                    <div class="space-y-4 max-w-md">
+                        <p class="text-gray-400 text-sm leading-relaxed font-medium">
+                            Swolx, endüstriyel ortamlarda çalışanlar için yüksek performanslı, sıfır tavizli güvenlik
+                            ayakkabıları üretir.
+                            Gelişmiş teknolojilerimiz ve premium tasarım anlayışımızla, iş güvenliğini bir üst seviyeye
+                            taşıyoruz.
+                        </p>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading text-white">MÜŞTERİ HİZMETLERİ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">İletişim</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Sıkça Sorulan Sorular</a>
+                        </li>
+                        <li><a href="dealers.html" class="text-gray-400 hover:text-white font-medium">Bayilerimiz</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Bakım Kılavuzu</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading text-white">KURUMSAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Hakkımızda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Felsefemiz</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Sürdürülebilirlik</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Topluluk</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading text-white">YASAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Gizlilik Politikası</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Çerez Politikası</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Kullanım Şartları</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Erişilebilirlik</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-lang-col">
+                    <h4 class="footer-heading text-white">DİL DEĞİŞTİR</h4>
+                    <div class="lang-selector border-white/20">
+                        <button id="footer-lang-trigger" class="lang-btn text-white">
+                            <span>TÜRKİYE</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <p class="text-[10px] text-white/40 mt-2 uppercase font-bold">Global / English</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
+                <p class="text-[10px] text-white/40 tracking-widest uppercase font-bold">© 2026 SWOLX. TÜM HAKLARI
+                    SAKLIDIR.</p>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] text-white/40 hover:text-white transition-colors uppercase tracking-widest font-bold">BİLGİ
+                        GÜVENLİĞİ</a>
+                    <a href="#"
+                        class="text-[10px] text-white/40 hover:text-white transition-colors uppercase tracking-widest font-bold">ÇEREZ
+                        AYARLARI</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Header Scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        if (mobileMenuTrigger && mobileMenuOverlay) {
+            mobileMenuTrigger.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileMenuClose && mobileMenuOverlay) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Mobile Accordions
+        document.querySelectorAll('.mobile-accordion-trigger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                if (icon) {
+                    icon.classList.toggle('fa-plus');
+                    icon.classList.toggle('fa-minus');
+                }
+            });
+        });
+
+        // Search Overlay
+        const searchTriggers = document.querySelectorAll('.search-trigger');
+        const searchClose = document.getElementById('search-close');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchInput = document.getElementById('search-input');
+
+        if (searchTriggers && searchOverlay) {
+            searchTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    searchOverlay.classList.remove('opacity-0', 'invisible');
+                    searchOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    setTimeout(() => { if (searchInput) searchInput.focus(); }, 500);
+                });
+            });
+        }
+
+        if (searchClose && searchOverlay) {
+            searchClose.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                searchOverlay.classList.add('opacity-0', 'invisible');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Language Drawer
+        const langTrigger = document.getElementById('lang-trigger');
+        const mobileLangTrigger = document.getElementById('mobile-lang-trigger');
+        const footerLangTrigger = document.getElementById('footer-lang-trigger');
+        const langClose = document.getElementById('lang-close');
+        const langDrawer = document.getElementById('lang-drawer');
+
+        const openLangDrawer = () => {
+            langDrawer.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        };
+
+        if (langTrigger) langTrigger.addEventListener('click', openLangDrawer);
+        if (mobileLangTrigger) mobileLangTrigger.addEventListener('click', openLangDrawer);
+        if (footerLangTrigger) footerLangTrigger.addEventListener('click', openLangDrawer);
+        if (langClose) langClose.addEventListener('click', () => {
+            langDrawer.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        // --- PRODUCT DETAIL SPECIFIC SCRIPTS ---
+
+        // 1. Gallery Image Switcher
+        const mainImg = document.getElementById('main-product-img');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbs.forEach(t => t.classList.remove('active', 'border-accent'));
+                thumbs.forEach(t => t.classList.add('border-gray-200'));
+
+                thumb.classList.add('active', 'border-accent');
+                thumb.classList.remove('border-gray-200');
+
+                const newSrc = thumb.querySelector('img').src;
+
+                mainImg.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImg.src = newSrc;
+                    mainImg.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // 2. Tabs System
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => {
+                    b.classList.remove('active', 'border-accent', 'text-black');
+                    b.classList.add('border-transparent', 'text-gray-400');
+                });
+
+                btn.classList.add('active', 'border-accent', 'text-black');
+                btn.classList.remove('border-transparent', 'text-gray-400');
+
+                tabContents.forEach(c => {
+                    c.classList.add('hidden');
+                    c.classList.remove('active');
+                });
+
+                const targetId = `tab-${btn.dataset.tab}`;
+                const targetContent = document.getElementById(targetId);
+                targetContent.classList.remove('hidden');
+                setTimeout(() => targetContent.classList.add('active'), 10);
+            });
+        });
+
+        // 3. Related Products Slider
+        const slider = document.getElementById('related-slider');
+        const prevBtn = document.getElementById('related-prev');
+        const nextBtn = document.getElementById('related-next');
+
+        if (slider && prevBtn && nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+
+</html>
