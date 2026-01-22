@@ -178,7 +178,8 @@
     </div>
 
     <!-- Search Overlay -->
-    <div id="search-overlay" class="fixed inset-0 bg-[#F8F9FA] backdrop-blur-2xl z-[200] flex flex-col">
+    <div id="search-overlay"
+        class="fixed inset-0 bg-[#F8F9FA] backdrop-blur-2xl z-[200] flex flex-col opacity-0 invisible">
         <div class="p-6 md:p-10 flex justify-end">
             <button id="search-close" class="text-black hover:text-accent transition-colors p-4" aria-label="Kapat">
                 <i class="fa-solid fa-xmark text-4xl"></i>
@@ -680,6 +681,7 @@
         if (searchTriggers && searchOverlay) {
             searchTriggers.forEach(trigger => {
                 trigger.addEventListener('click', () => {
+                    searchOverlay.classList.remove('opacity-0', 'invisible');
                     searchOverlay.classList.add('active');
                     document.body.style.overflow = 'hidden';
                     setTimeout(() => {
@@ -692,6 +694,7 @@
         if (searchClose && searchOverlay) {
             searchClose.addEventListener('click', () => {
                 searchOverlay.classList.remove('active');
+                searchOverlay.classList.add('opacity-0', 'invisible');
                 document.body.style.overflow = '';
             });
         }
@@ -700,6 +703,7 @@
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
                 searchOverlay.classList.remove('active');
+                searchOverlay.classList.add('opacity-0', 'invisible');
                 document.body.style.overflow = '';
             }
         });
