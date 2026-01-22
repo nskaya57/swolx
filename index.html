@@ -631,25 +631,36 @@
         // Touch Swipe Support for Mobile
         const sliderElement = document.querySelector('.sg-slider');
         let touchStartX = 0;
+        let touchStartY = 0;
         let touchEndX = 0;
-        let isSwiping = false;
+        let isHorizontalSwipe = false;
 
         if (sliderElement) {
             sliderElement.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
-                isSwiping = true;
+                touchStartY = e.changedTouches[0].screenY;
+                isHorizontalSwipe = false;
             }, { passive: true });
 
             sliderElement.addEventListener('touchmove', (e) => {
-                if (isSwiping) {
+                const currentX = e.changedTouches[0].screenX;
+                const currentY = e.changedTouches[0].screenY;
+                const diffX = Math.abs(currentX - touchStartX);
+                const diffY = Math.abs(currentY - touchStartY);
+
+                // Only prevent if horizontal movement is greater than vertical
+                if (diffX > diffY && diffX > 10) {
+                    isHorizontalSwipe = true;
                     e.preventDefault();
                 }
             }, { passive: false });
 
             sliderElement.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                isSwiping = false;
+                if (isHorizontalSwipe) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }
+                isHorizontalSwipe = false;
             }, { passive: true });
         }
 
