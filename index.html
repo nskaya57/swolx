@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body class="bg-[#0A0A0A] text-white">
+<body class="bg-white text-black">
 
     <!-- Header -->
     <header id="main-header"
@@ -48,16 +48,16 @@
                         <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
                             <div>
                                 <ul class="space-y-3">
-                                    <li><a href="#"
+                                    <li><a href="category.html"
                                             class="text-gray-600 hover:text-black transition-colors font-semibold">Ayakkabılar</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li><a href="category.html"
                                             class="text-gray-600 hover:text-black transition-colors font-semibold">Botlar</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li><a href="category.html"
                                             class="text-gray-600 hover:text-black transition-colors font-semibold">Sandaletler</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li><a href="category.html"
                                             class="text-gray-600 hover:text-black transition-colors font-semibold">Çizmeler</a>
                                     </li>
                                 </ul>
@@ -74,10 +74,10 @@
                         <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
                             <div>
                                 <ul class="space-y-3">
-                                    <li><a href="#"
+                                    <li><a href="category.html"
                                             class="text-gray-600 hover:text-black transition-colors font-semibold">Çoraplar</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li><a href="category.html"
                                             class="text-gray-600 hover:text-black transition-colors font-semibold">Tabanlıklar</a>
                                     </li>
                                 </ul>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="#" class="nav-link py-8">Mağaza Bulucu</a></li>
+                <li><a href="dealers.html" class="nav-link py-8">Bayilerimiz</a></li>
                 <li><a href="#" class="nav-link py-8">Rehberler</a></li>
                 <li><a href="#" class="nav-link py-8">Sürdürülebilirlik</a></li>
             </ul>
@@ -138,10 +138,10 @@
                             <i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </button>
                         <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
-                            <a href="#" class="block text-lg font-semibold text-gray-700">Ayakkabılar</a>
-                            <a href="#" class="block text-lg font-semibold text-gray-700">Botlar</a>
-                            <a href="#" class="block text-lg font-semibold text-gray-700">Sandaletler</a>
-                            <a href="#" class="block text-lg font-semibold text-gray-700">Çizmeler</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Ayakkabılar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Botlar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Sandaletler</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Çizmeler</a>
                         </div>
                     </li>
                     <li>
@@ -151,11 +151,12 @@
                             <i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </button>
                         <div class="mobile-accordion-content hidden mt-4 pl-4 space-y-4">
-                            <a href="#" class="block text-lg font-semibold text-gray-700">Çoraplar</a>
-                            <a href="#" class="block text-lg font-semibold text-gray-700">Tabanlıklar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Çoraplar</a>
+                            <a href="category.html" class="block text-lg font-semibold text-gray-700">Tabanlıklar</a>
                         </div>
                     </li>
-                    <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">MAĞAZA BULUCU</a></li>
+                    <li><a href="dealers.html"
+                            class="block text-xl font-bold border-b border-gray-100 pb-4">BAYİLERİMİZ</a></li>
                     <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">REHBERLER</a></li>
                     <li><a href="#" class="block text-xl font-bold border-b border-gray-100 pb-4">SÜRDÜRÜLEBİLİRLİK</a>
                     </li>
@@ -217,7 +218,7 @@
         class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-[300] translate-x-full transition-transform duration-500 shadow-2xl flex flex-col">
         <div class="p-6 border-b border-gray-100 flex justify-between items-center">
             <h3 class="text-black font-bold text-xl uppercase italic">DİL SEÇİMİ</h3>
-            <button id="lang-close" class="text-black hover:text-accent p-2">
+            <button id="lang-close" class="text-black hover:text-accent p-2" aria-label="Kapat">
                 <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
         </div>
@@ -339,11 +340,11 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
         </section>
-        <section class="py-8 md:py-12 bg-[#EBEBEB]">
+        <section class="py-8 md:py-12 bg-gray-50">
             <div class="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     <!-- Ayakkabı -->
-                    <a href="#" class="group block">
+                    <a href="category.html" class="group block">
                         <div
                             class="aspect-square bg-white rounded-lg overflow-hidden relative flex items-center justify-center p-6 md:p-10 transition-all duration-500 group-hover:bg-gray-50 shadow-sm">
                             <img src="assets/img/kategori-ayakkabi.png" alt="Ayakkabı"
@@ -356,7 +357,7 @@
                     </a>
 
                     <!-- Bot -->
-                    <a href="#" class="group block">
+                    <a href="category.html" class="group block">
                         <div
                             class="aspect-square bg-white rounded-lg overflow-hidden relative flex items-center justify-center p-6 md:p-10 transition-all duration-500 group-hover:bg-gray-50 shadow-sm">
                             <img src="assets/img/kategori-bot.png" alt="Bot"
@@ -369,7 +370,7 @@
                     </a>
 
                     <!-- Sandalet -->
-                    <a href="#" class="group block">
+                    <a href="category.html" class="group block">
                         <div
                             class="aspect-square bg-white rounded-lg overflow-hidden relative flex items-center justify-center p-6 md:p-10 transition-all duration-500 group-hover:bg-gray-50 shadow-sm">
                             <img src="assets/img/kategori-sandalet.png" alt="Sandalet"
@@ -382,7 +383,7 @@
                     </a>
 
                     <!-- Çizme -->
-                    <a href="#" class="group block">
+                    <a href="category.html" class="group block">
                         <div
                             class="aspect-square bg-white rounded-lg overflow-hidden relative flex items-center justify-center p-6 md:p-10 transition-all duration-500 group-hover:bg-gray-50 shadow-sm">
                             <img src="assets/img/kategori-cizme.png" alt="Çizme"
@@ -500,8 +501,8 @@
         <section class="seo-section px-10">
             <div class="max-w-[1400px] mx-auto">
                 <div class="seo-card reveal">
-                    <h2 class="text-2xl md:text-4xl mb-8 font-bold text-black"
-                        style="font-family: 'Inter', sans-serif;">SWOLX: ENDÜSTRİYEL PERFORMANS VE GÜVENLİK</h2>
+                    <h2 class="text-2xl md:text-4xl mb-8 font-bold text-black">SWOLX: ENDÜSTRİYEL PERFORMANS VE GÜVENLİK
+                    </h2>
                     <div class="grid lg:grid-cols-2 gap-12 text-black/70 leading-relaxed font-medium">
                         <p>Swolx, endüstriyel iş güvenliği ayakkabılarında inovasyon ve tasarımı bir araya getirerek,
                             zorlu çalışma koşullarında maksimum performans ve konfor sunar. Yüksek kaliteli malzemeler
@@ -520,9 +521,9 @@
         <footer>
             <div class="footer-grid">
                 <div>
-                    <h3 class="footer-logo font-black tracking-tighter text-black">SWOLX</h3>
+                    <img src="assets/img/logo/swolx-logo.png" alt="Swolx" class="mb-8 w-48 opacity-90">
                     <div class="space-y-4 max-w-md">
-                        <p class="text-black/60 text-sm leading-relaxed font-medium">
+                        <p class="text-gray-400 text-sm leading-relaxed font-medium">
                             Swolx, endüstriyel ortamlarda çalışanlar için yüksek performanslı, sıfır tavizli güvenlik
                             ayakkabıları üretir.
                             Gelişmiş teknolojilerimiz ve premium tasarım anlayışımızla, iş güvenliğini bir üst seviyeye
@@ -538,58 +539,59 @@
                 </div>
 
                 <div>
-                    <h4 class="footer-heading text-black">MÜŞTERİ HİZMETLERİ</h4>
+                    <h4 class="footer-heading text-white">MÜŞTERİ HİZMETLERİ</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">İletişim</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Sıkça Sorulan Sorular</a>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">İletişim</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Sıkça Sorulan Sorular</a>
                         </li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Mağaza Bulucu</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Bakım Kılavuzu</a></li>
+                        <li><a href="dealers.html" class="text-gray-400 hover:text-white font-medium">Bayilerimiz</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Bakım Kılavuzu</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="footer-heading text-black">KURUMSAL</h4>
+                    <h4 class="footer-heading text-white">KURUMSAL</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Hakkımızda</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Felsefemiz</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Sürdürülebilirlik</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Topluluk</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Hakkımızda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Felsefemiz</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Sürdürülebilirlik</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Topluluk</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="footer-heading text-black">YASAL</h4>
+                    <h4 class="footer-heading text-white">YASAL</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Gizlilik Politikası</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Çerez Politikası</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Kullanım Şartları</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-black font-medium">Erişilebilirlik</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Gizlilik Politikası</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Çerez Politikası</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Kullanım Şartları</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white font-medium">Erişilebilirlik</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-lang-col">
-                    <h4 class="footer-heading text-black">DİL DEĞİŞTİR</h4>
-                    <div class="lang-selector border-black/10">
-                        <button id="footer-lang-trigger" class="lang-btn text-black">
+                    <h4 class="footer-heading text-white">DİL DEĞİŞTİR</h4>
+                    <div class="lang-selector border-white/20">
+                        <button id="footer-lang-trigger" class="lang-btn text-white">
                             <span>TÜRKİYE</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
-                        <p class="text-[10px] text-black/40 mt-2 uppercase font-bold">Global / English</p>
+                        <p class="text-[10px] text-white/40 mt-2 uppercase font-bold">Global / English</p>
                     </div>
                 </div>
             </div>
 
             <div
-                class="mt-20 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
-                <p class="text-[10px] text-black/40 tracking-widest uppercase font-bold">© 2026 SWOLX. TÜM HAKLARI
+                class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center px-10 gap-6">
+                <p class="text-[10px] text-white/40 tracking-widest uppercase font-bold">© 2026 SWOLX. TÜM HAKLARI
                     SAKLIDIR.</p>
                 <div class="flex gap-8">
                     <a href="#"
-                        class="text-[10px] text-black/40 hover:text-black transition-colors uppercase tracking-widest font-bold">BİLGİ
+                        class="text-[10px] text-white/40 hover:text-white transition-colors uppercase tracking-widest font-bold">BİLGİ
                         GÜVENLİĞİ</a>
                     <a href="#"
-                        class="text-[10px] text-black/40 hover:text-black transition-colors uppercase tracking-widest font-bold">ÇEREZ
+                        class="text-[10px] text-white/40 hover:text-white transition-colors uppercase tracking-widest font-bold">ÇEREZ
                         AYARLARI</a>
                 </div>
             </div>
