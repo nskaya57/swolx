@@ -86,15 +86,15 @@ header.scrolled {
 }
 
 header.scrolled .header-logo-img {
-  height: 32px;
+  height: 48px;
 }
 
 .nav-link {
-  font-size: 13px;
+  font-size: 15px;
   /* Slightly smaller for elegance */
   font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   /* Back to uppercase for navigation consistency */
   position: relative;
   transition: color 0.3s ease;
@@ -137,6 +137,7 @@ header.scrolled .header-logo-img {
 .sg-slider {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .sg-slide {

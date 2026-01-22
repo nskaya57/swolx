@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWOLX | Rehberler</title>
+    <title>SWOLX | İletişim</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +47,6 @@
             <ul class="flex space-x-8">
                 <li class="group/mega">
                     <a href="#" class="nav-link py-8">Ürünler</a>
-                    <!-- Mega Menu Dropdown -->
                     <div
                         class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
                         <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
@@ -67,13 +66,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- Add more columns if needed -->
                         </div>
                     </div>
                 </li>
                 <li class="group/mega">
                     <a href="#" class="nav-link py-8">Aksesuarlar</a>
-                    <!-- Mega Menu Dropdown for Accessories -->
                     <div
                         class="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl opacity-0 invisible translate-y-2 group-hover/mega:opacity-100 group-hover/mega:visible group-hover/mega:translate-y-0 transition-all duration-300 z-[60]">
                         <div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-4 gap-8">
@@ -163,7 +160,8 @@
                     <li class="border-b border-gray-100 pb-4"><a href="guides.html"
                             class="block text-xl font-bold">Rehberler</a></li>
                     <li class="border-b border-gray-100 pb-4"><a href="contact.html"
-                            class="block text-xl font-bold">İletişim</a></li>
+                            class="block text-xl font-bold">İletişim</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -182,208 +180,108 @@
         </div>
     </div>
 
-    <!-- Search Overlay -->
-    <div id="search-overlay"
-        class="fixed inset-0 bg-[#F8F9FA] backdrop-blur-2xl z-[200] flex flex-col opacity-0 invisible">
-        <div class="p-6 md:p-10 flex justify-end">
-            <button id="search-close" class="text-black hover:text-accent transition-colors p-4" aria-label="Kapat">
-                <i class="fa-solid fa-xmark text-4xl"></i>
-            </button>
-        </div>
-        <div class="flex-grow flex items-start justify-center px-4 md:px-6 pt-[10vh] md:pt-[15vh]">
-            <div class="w-full max-w-4xl relative reveal-search">
-                <div
-                    class="relative flex items-center bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl px-4 md:px-6 focus-within:border-accent group transition-all shadow-sm">
-                    <i
-                        class="fa-solid fa-magnifying-glass text-gray-400 text-lg md:text-2xl mr-3 md:mr-4 group-focus-within:text-accent transition-colors"></i>
-                    <input type="text" id="search-input" placeholder="Ne aramıştınız?"
-                        class="w-full bg-transparent py-4 md:py-8 text-lg md:text-3xl text-black placeholder:text-gray-400 focus:outline-none font-bold italic uppercase">
-                </div>
-                <div class="mt-8 md:mt-12 flex flex-wrap gap-2 md:gap-4">
-                    <span
-                        class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest w-full mb-2">Popüler
-                        Aramalar</span>
-                    <a href="#"
-                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Oxygrid</a>
-                    <a href="#"
-                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">S3L
-                        SRC</a>
-                    <a href="#"
-                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Botlar</a>
-                    <a href="#"
-                        class="px-4 py-2 bg-white border border-gray-200 hover:border-accent hover:text-accent transition-all text-[11px] md:text-sm font-bold uppercase rounded-full shadow-sm text-gray-800">Sandalet</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Main Content -->
+    <main class="pt-[80px]"> <!-- Header height padding -->
 
-    <!-- Language Drawer (Same as dealers.html) -->
-    <div id="lang-drawer"
-        class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-[300] translate-x-full transition-transform duration-500 shadow-2xl flex flex-col">
-        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
-            <h3 class="text-black font-bold text-xl uppercase italic">DİL SEÇİMİ</h3>
-            <button id="lang-close" class="text-black hover:text-accent p-2" aria-label="Kapat">
-                <i class="fa-solid fa-xmark text-2xl"></i>
-            </button>
-        </div>
-        <div class="flex-grow overflow-y-auto py-4">
-            <ul class="space-y-1">
-                <li>
-                    <button
-                        class="lang-option w-full flex items-center px-8 py-4 hover:bg-gray-50 transition-colors group"
-                        data-lang="tr">
-                        <span
-                            class="w-8 h-5 bg-[#E30A17] rounded-sm mr-4 relative overflow-hidden flex items-center justify-center">
-                            <svg viewBox="0 0 1200 800" class="w-full h-full">
-                                <rect width="1200" height="800" fill="#E30A17" />
-                                <circle cx="425" cy="400" r="200" fill="#fff" />
-                                <circle cx="475" cy="400" r="160" fill="#E30A17" />
-                                <polygon points="575,400 701,359 653,491 575,400" fill="#fff"
-                                    transform="translate(100,0) rotate(-18 575 400)" />
-                            </svg>
-                        </span>
-                        <span class="text-black font-semibold">TÜRKÇE</span>
-                        <i class="fa-solid fa-check ml-auto text-accent"></i>
-                    </button>
-                </li>
-                <!-- Other langs simplified for brevity -->
-            </ul>
-        </div>
-        <div class="p-8 bg-gray-50">
-            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Global / English</p>
-        </div>
-    </div>
-
-
-    <main class="pt-[90px]">
-        <!-- Page Hero -->
+        <!-- Hero / Breadcrumb Section -->
         <section class="py-12 md:py-16 bg-white border-b border-gray-100">
             <div class="max-w-[1400px] mx-auto px-6 md:px-10">
                 <nav class="flex items-center text-xs text-gray-500 font-bold uppercase tracking-widest mb-6 space-x-2">
                     <a href="index.html" class="hover:text-black transition-colors">Ana Sayfa</a>
                     <span>/</span>
-                    <span class="text-black">Rehberler</span>
+                    <span class="text-black">İletişim</span>
                 </nav>
 
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-                    <div class="max-w-3xl">
-                        <h1
-                            class="text-5xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-none italic">
-                            REHBERLER
-                        </h1>
-                        <p class="text-gray-600 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-                            SWOLX ürünlerinizi en verimli şekilde kullanmak, bakımını yapmak ve güvenlik standartları
-                            hakkında bilgi almak için rehberlerimizi inceleyin.
-                        </p>
-                    </div>
+                <div class="max-w-4xl">
+                    <h1
+                        class="text-5xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-none italic">
+                        İLETİŞİM
+                    </h1>
+                    <p class="text-gray-600 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+                        Sorularınız, işbirliği teklifleriniz veya geri bildirimleriniz için bize ulaşın.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Guides Grid Section -->
-        <section class="py-12 md:py-16 bg-white">
+        <!-- Contact Info & Map Section -->
+        <section class="py-16 md:py-24 bg-white">
             <div class="max-w-[1400px] mx-auto px-6 md:px-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-                    <!-- Guide Card 1: Care Guide -->
-                    <div
-                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
-                        <div class="absolute inset-0">
-                            <img src="assets/img/guide_care.png" alt="Bakım Klavuzu"
-                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
-                            <!-- Noise/Grain Overlay -->
-                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
-                            <!-- Inner Shadow for Depth -->
-                            <div
-                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
+                    <!-- Addresses Left Column -->
+                    <div class="space-y-16">
+
+                        <!-- Header -->
+                        <div>
+                            <h2 class="text-2xl font-black uppercase tracking-wide mb-8">Hatipoğlu Ayakkabı ve Deri
+                                Sanayi Ticaret Ltd.Şti.</h2>
+
+                            <!-- Contact Details Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                                <!-- Factory -->
+                                <div class="space-y-4">
+                                    <h3 class="text-lg font-bold uppercase text-accent tracking-widest">Fabrika</h3>
+                                    <address class="not-italic text-gray-600 leading-relaxed font-medium">
+                                        Büyük Organize Sanayi Mh. D Cd. No: 117<br>
+                                        Korgun Çankırı / Türkiye
+                                    </address>
+                                </div>
+
+                                <!-- Headquarters -->
+                                <div class="space-y-4">
+                                    <h3 class="text-lg font-bold uppercase text-accent tracking-widest">Merkez</h3>
+                                    <address class="not-italic text-gray-600 leading-relaxed font-medium">
+                                        Tokat Mh. Sultanaziz Cd. Mehmetağa Sk. No:8 Zemin Kat Beykoz İstanbul / Türkiye
+                                    </address>
+                                </div>
                             </div>
                         </div>
-                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
-                            <div
-                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
-                                <span class="text-black font-black text-sm md:text-lg text-center">Bakım
-                                    Klavuzu</span>
-                                <i
-                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+
+                        <!-- Direct Contact -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-8 border-t border-gray-100">
+                            <div class="space-y-2">
+                                <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest">T E L E F O N</h4>
+                                <a href="tel:+908503076677"
+                                    class="block text-2xl font-black text-black hover:text-accent transition-colors">
+                                    +90 850 307 6677
+                                </a>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest">E - P O S T A</h4>
+                                <a href="mailto:info@swolx.com"
+                                    class="block text-2xl font-black text-black hover:text-accent transition-colors">
+                                    info@swolx.com
+                                </a>
                             </div>
                         </div>
+
+
+
                     </div>
 
-                    <!-- Guide Card 2: FAQ -->
-                    <div
-                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
-                        <div class="absolute inset-0">
-                            <img src="assets/img/guide_faq.png" alt="Sık Sorulan Sorular"
-                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
-                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
-                            <!-- Inner Shadow for Depth -->
-                            <div
-                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
-                            </div>
-                        </div>
-                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
-                            <div
-                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
-                                <span class="text-black font-black text-sm md:text-lg text-center">Sık
-                                    Sorulan Sorular</span>
-                                <i
-                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Guide Card 3: Technology -->
-                    <div
-                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
-                        <div class="absolute inset-0">
-                            <img src="assets/img/guide_tech.png" alt="Teknoloji"
-                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
-                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
-                            <!-- Inner Shadow for Depth -->
-                            <div
-                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
-                            </div>
-                        </div>
-                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
-                            <div
-                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
-                                <span class="text-black font-black text-sm md:text-lg text-center">Teknoloji</span>
-                                <i
-                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Guide Card 4: Safety Classes -->
-                    <div
-                        class="group relative aspect-[4/5] md:aspect-square border-[12px] md:border-[16px] border-[#E60000] overflow-hidden cursor-pointer">
-                        <div class="absolute inset-0">
-                            <img src="assets/img/guide_safety.png" alt="Güvenlik Sınıfları"
-                                class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
-                            <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
-                            <!-- Inner Shadow for Depth -->
-                            <div
-                                class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] z-10 pointer-events-none">
-                            </div>
-                        </div>
-                        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20 px-4 md:px-6">
-                            <div
-                                class="bg-white py-2 px-5 md:px-8 shadow-xl transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center gap-3">
-                                <span class="text-black font-black text-sm md:text-lg text-center">Güvenlik
-                                    Sınıfları</span>
-                                <i
-                                    class="fa-solid fa-chevron-right text-[#E60000] text-sm md:text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
-                            </div>
-                        </div>
+                    <!-- Map Right Column -->
+                    <div class="w-full h-[500px] bg-gray-100 relative group overflow-hidden border-2 border-gray-100">
+                        <!-- Using iframe with larger width/height attributes, CSS will constrain it to container -->
+                        <iframe title="Konum Haritası" width="100%" height="100%" frameborder="0" scrolling="no"
+                            marginheight="0" marginwidth="0"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=33.490211%2C40.707827%2C33.530211%2C40.747827&amp;layer=mapnik&amp;marker=40.727827%2C33.510211"
+                            class="border-0"></iframe>
+                        <br />
+                        <small class="absolute bottom-2 left-2 bg-white px-2 py-1 text-xs font-bold shadow-md z-10">
+                            <a href="https://www.openstreetmap.org/?mlat=40.727827&amp;mlon=33.510211#map=16/40.727827/33.510211"
+                                target="_blank" rel="noopener" class="text-black hover:text-accent">Büyük Harita</a>
+                        </small>
                     </div>
 
                 </div>
             </div>
         </section>
+
     </main>
 
-
-    <!-- Footer (Same as other pages, simplified) -->
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div>
@@ -463,6 +361,7 @@
         </div>
     </footer>
 
+    <!-- Scripts (Same as other pages) -->
     <script>
         // Header Scroll
         const header = document.getElementById('main-header');
@@ -505,54 +404,11 @@
             });
         });
 
-        // Search Overlay Toggle
-        const searchTriggers = document.querySelectorAll('.search-trigger');
-        const searchClose = document.getElementById('search-close');
-        const searchOverlay = document.getElementById('search-overlay');
-        if (searchTriggers && searchOverlay) {
-            searchTriggers.forEach(trigger => {
-                trigger.addEventListener('click', () => {
-                    searchOverlay.classList.remove('opacity-0', 'invisible');
-                    searchOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-        }
-        if (searchClose && searchOverlay) {
-            searchClose.addEventListener('click', () => {
-                searchOverlay.classList.remove('active');
-                searchOverlay.classList.add('opacity-0', 'invisible');
-                document.body.style.overflow = '';
-            });
-        }
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
-                searchOverlay.classList.remove('active');
-                searchOverlay.classList.add('opacity-0', 'invisible');
-                document.body.style.overflow = '';
-            }
-        });
-
         // Language Drawer Toggle
         const langTrigger = document.getElementById('lang-trigger');
         const mobileLangTrigger = document.getElementById('mobile-lang-trigger');
         const langClose = document.getElementById('lang-close');
-        const langDrawer = document.getElementById('lang-drawer');
-
-        const openLangDrawer = () => {
-            langDrawer.classList.remove('translate-x-full');
-            document.body.style.overflow = 'hidden';
-        };
-
-        if (langTrigger && langDrawer) langTrigger.addEventListener('click', openLangDrawer);
-        if (mobileLangTrigger && langDrawer) mobileLangTrigger.addEventListener('click', openLangDrawer);
-
-        if (langClose && langDrawer) {
-            langClose.addEventListener('click', () => {
-                langDrawer.classList.add('translate-x-full');
-                document.body.style.overflow = '';
-            });
-        }
+        // Simple mock for lang drawer since it's shared
     </script>
 </body>
 
