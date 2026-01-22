@@ -131,7 +131,8 @@ header.scrolled .header-logo-img {
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.05);
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,6 +141,7 @@ header.scrolled .header-logo-img {
 .sg-slide.active {
   opacity: 1;
   visibility: visible;
+  transform: scale(1);
 }
 
 .sg-slide-media {

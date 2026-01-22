@@ -632,15 +632,24 @@
         const sliderElement = document.querySelector('.sg-slider');
         let touchStartX = 0;
         let touchEndX = 0;
+        let isSwiping = false;
 
         if (sliderElement) {
             sliderElement.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
+                isSwiping = true;
             }, { passive: true });
+
+            sliderElement.addEventListener('touchmove', (e) => {
+                if (isSwiping) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
 
             sliderElement.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
+                isSwiping = false;
             }, { passive: true });
         }
 
